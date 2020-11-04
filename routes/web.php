@@ -38,3 +38,5 @@ Route::get('/register-staff', 'Auth\RegisterController@registerStaff');
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/dashboard', 'User\UserController@index')->name('dashboard.users');
 });
+
+Route::get('home','HomeController@index');

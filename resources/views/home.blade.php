@@ -1,6 +1,22 @@
 @extends('layouts.app')
 
-@section('content')
+<body>
+    <table border="1">
+        <tr>
+            <th>Nama  :</th>
+            <th>Roles :</th>
+        </tr>
+        @foreach($users as $user)
+        <tr>
+            <td>{{$user->usr_name}}</td>
+            <td>{{$user->name}}</td>
+            
+            
+        </tr>
+        @endforeach
+    </table>
+</body>
+<!--@section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
