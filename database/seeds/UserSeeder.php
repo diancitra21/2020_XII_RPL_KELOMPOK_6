@@ -16,7 +16,6 @@ class UserSeeder extends Seeder
     public function run()
     {
         $admin = User::create([
-            'role_id' => '1',
             'usr_name' => 'Admin',
             'usr_email' => 'admin@gmail.com',
             'usr_phone' => '08213456789',
@@ -29,19 +28,8 @@ class UserSeeder extends Seeder
         $admin->assignRole('admin');
 
         $user = User::create([
-            'role_id' => '2',
             'usr_name' => 'User',
             'usr_email' => 'user@gmail.com',
-            'usr_phone' => '08213456789',
-            'usr_password' => Hash::make('student123'),
-            'usr_email_verified_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'usr_verification_token' => str_replace('/', '', Hash::make(Str::random(12))),
-            'usr_is_active' => true,
-        ]);
-        $user = User::create([
-            'role_id' => '2',
-            'usr_name' => 'Dian',
-            'usr_email' => 'dian@gmail.com',
             'usr_phone' => '08213456789',
             'usr_password' => Hash::make('student123'),
             'usr_email_verified_at' => Carbon::now()->format('Y-m-d H:i:s'),

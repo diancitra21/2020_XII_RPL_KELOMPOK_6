@@ -26,4 +26,8 @@ class UserController extends Controller
     {
         return view('users.dashboard');
     }
+     public function admin()
+    {
+        return view('admin.dashboard');
+    }
 }

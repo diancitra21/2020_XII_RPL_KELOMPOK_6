@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/index',function() {
+	return view('index');
+});
 Auth::routes();
 
 Route::get('/account/{userId}/{userVerificationToken}/activate', 'Auth\AccountController@verifyToken');
@@ -38,5 +41,17 @@ Route::get('/register-staff', 'Auth\RegisterController@registerStaff');
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/dashboard', 'User\UserController@index')->name('dashboard.users');
 });
-
+Route::get('/index', 'user\UserController@admin')->name('dashboard.admin');
 Route::get('home','HomeController@index');
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
 <div class="container">
@@ -11,9 +11,9 @@
             </div>
             @endif
 
-            @if(Auth()->user()->hasRole('student'))
-            <div class="card">
-                <div class="card-header" style="background: yellow">{{ __('Dashboard Siswa') }}</div>
+           <!-- @if(Auth()->user()->hasRole('user'))-->
+            <!--<div class="card">
+                <div class="card-header" style="background: yellow">{{ __('Dashboard User') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -27,45 +27,9 @@
                     Example Tampilan Untuk Siswa
                 </div>
             </div>
-            @elseif(Auth()->user()->hasRole('teacher'))
-
-            <div class="card">
-                <div class="card-header" style="background: grey">{{ __('Dashboard Guru') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                    <br><br>
-                    Example Tampilan Untuk Guru
-                </div>
-            </div>
-
-            @elseif(Auth()->user()->hasRole('staff'))
-
-            <div class="card">
-                <div class="card-header" style="background: blue">{{ __('Dashboard Staff') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                    <br><br>
-                    Example Tampilan Untuk Staff
-                </div>
-            </div>
-
+                    
             @else
-
-            <div class="card">
+          <div class="card">
                 <div class="card-header" style="background: green">{{ __('Dashboard') }} Admin</div>
 
                 <div class="card-body">
