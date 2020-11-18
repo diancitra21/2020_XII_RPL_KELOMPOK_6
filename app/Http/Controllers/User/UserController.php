@@ -26,7 +26,48 @@ class UserController extends Controller
     {
         return view('users.dashboard');
     }
-     public function admin()
+
+    public function ListBuku()
+    {
+        return view ('users.list-buku');
+    }
+
+    public function ListUser()
+    {
+        return view ('admin.list-user');
+    }
+
+    public function AddBook()
+    {
+        return view ('admin.add-book');
+    }
+
+    public function ListBukuAdmin()
+    {
+        return view ('admin.list-buku-admin');
+    }
+
+    public function Peminjaman()
+    {
+        return view ('admin.peminjaman-buku');
+    }
+
+    public function History()
+    {
+        return view ('admin.history');
+    }
+
+    public function PeminjamanUser()
+    {
+        return view ('users.peminjaman-buku-user');
+    }
+
+    public function HistoryUser()
+    {
+        return view ('users.history-user');
+    }
+
+    public function admin()
     {
         return view('admin.dashboard');
     }

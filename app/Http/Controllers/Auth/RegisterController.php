@@ -92,15 +92,15 @@ class RegisterController extends Controller
         ]);
 
         if ($data['role'] == 1) {
-            $user->assignRole('student');
+            $user->assignRole('admin');
             $user->created_by = $user->usr_id;
         } elseif ($data['role'] == 2) {
-            $user->assignRole('teacher');
+            $user->assignRole('user');
             $user->created_by = $user->usr_id;
-        } elseif ($data['role'] == 3) {
+        } /*elseif ($data['role'] == 3) {
             $user->assignRole('staff');
             $user->created_by = $user->usr_id;
-        }
+        }*/
 
 
         Mail::to($data['usr_email'])->send(new SendMail($user));

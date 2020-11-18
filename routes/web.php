@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -43,6 +44,16 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 });
 Route::get('/index', 'user\UserController@admin')->name('dashboard.admin');
 Route::get('home','HomeController@index');
+Route::get('list-buku' , 'User\UserController@ListBuku');
+Route::get('list-user' , 'User\UserController@ListUser');
+Route::get('add-book' , 'User\UserController@AddBook');
+Route::get('list-buku-admin' , 'User\UserController@ListBukuAdmin');
+Route::get('Peminjaman-buku' , 'User\UserController@Peminjaman');
+Route::get('History' , 'User\UserController@History');
+Route::get('Peminjaman-buku-user' , 'User\UserController@PeminjamanUser');
+Route::get('History-user' , 'User\UserController@HistoryUser');
+
+
 
 
 
