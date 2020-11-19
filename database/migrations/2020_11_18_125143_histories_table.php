@@ -21,12 +21,6 @@ class HistoriesTable extends Migration
             $table->foreign('borrow_id_updated_by')->references('borrow_id')->on('borrows')->onDelete('cascade');
             $table->bigInteger('borrow_id_deleted_by')->unsigned();
             $table->foreign('borrow_id_deleted_by')->references('borrow_id')->on('borrows')->onDelete('cascade');
-            $table->bigInteger('return_id_created_by')->unsigned();
-            $table->foreign('return_id_created_by')->references('return_id')->on('returns')->onDelete('cascade');
-            $table->bigInteger('return_id_updated_by')->unsigned();
-            $table->foreign('return_id_updated_by')->references('return_id')->on('returns')->onDelete('cascade');
-            $table->bigInteger('return_id_deleted_by')->unsigned();
-            $table->foreign('return_id_deleted_by')->references('return_id')->on('returns')->onDelete('cascade');
             $table->bigInteger('user_id_created_by')->unsigned();
             $table->foreign('user_id_created_by')->references('usr_id')->on('users')->onDelete('cascade');
             $table->bigInteger('user_id_updated_by')->unsigned();
