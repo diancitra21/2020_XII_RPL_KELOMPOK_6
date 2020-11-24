@@ -29,7 +29,7 @@
                   <li class="dropdown avatar-dropdown">
                    <img src="asset/img/avatar.jpg" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
                    <ul class="dropdown-menu user-dropdown">
-                     <li><a href="{{URL::to('Profile_user')}}"><span class="fa fa-user"></span> My Profile</a></li>
+                     <li><a href="{{URL::to('detail_user')}}"><span class="fa fa-user"></span> My Profile</a></li>
                           <li><a href="{{ route('logout') }} " onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> <span class="fa fa-power-off ">{{ __('Logout') }}</span></a></li>
                           
                           <form id="logout-form" action="{{ route('logout') }}" method="POST">

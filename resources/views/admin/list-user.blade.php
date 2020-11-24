@@ -22,35 +22,35 @@
           <td>Dian citra</td>
           <td>dian@gmail.com</td>
           <td>089513438102</td>
-         <td><a href="{{URL::to('Profile_user')}}" class="btn btn-outline btn-info" >Lihat Detail</td>
+         <td><a href="{{URL::to('detail_users')}}" class="btn btn-outline btn-info" >Lihat Detail</td>
         </tr>
         <tr>
           <td>2</td>
           <td>Eka</td>
           <td>eka@gmail.com</td>
           <td>089516085820</td>
-          <td><a href="{{URL::to('Profile_user')}}" class="btn btn-outline btn-info" >Lihat Detail</td>
+          <td><a href="{{URL::to('detail_users')}}" class="btn btn-outline btn-info" >Lihat Detail</td>
         </tr>
         <tr>
           <td>3</td>
           <td>Evi nopianti</td>
           <td>evi@gmail.com</td>
           <td>08953899119</td>
-          <td><a href="{{URL::to('Profile_user')}}" class="btn btn-outline btn-info" >Lihat Detail</td>
+          <td><a href="{{URL::to('detail_user')}}" class="btn btn-outline btn-info" >Lihat Detail</td>
         </tr>
         <tr>
           <td>4</td>
           <td>Luthfina</td>
           <td>fina@gmail.com</td>
           <td>082128806442</td>
-          <td><a href="{{URL::to('Profile_user')}}" class="btn btn-outline btn-info" >Lihat Detail</td>
+          <td><a href="{{URL::to('detail_users')}}" class="btn btn-outline btn-info" >Lihat Detail</td>
         </tr>
         <tr>
           <td>5</td>
           <td>Serli</td>
           <td>serli@gmail.com</td>
           <td>089513438102</td>
-          <td><a href="{{URL::to('Profile_user')}}" class="btn btn-outline btn-info" >Lihat Detail</td>
+          <td><a href="{{URL::to('detail_users')}}" class="btn btn-outline btn-info" >Lihat Detail</td>
         </tr>
       </tbody>\
     </table>

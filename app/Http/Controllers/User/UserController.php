@@ -67,14 +67,18 @@ class UserController extends Controller
         return view ('users.history-user');
     }
 
-    public function MyProfile()
+    public function DetailAdmin()
     {
-        return view ('admin.My_Profile');
+        return view ('admin.detail_admin');
+    }
+    public function DetailUserAdmin()
+    {
+        return view ('admin.detail_users');
     }
 
-    public function Profile()
+    public function DetailUser()
     {
-        return view ('users.Profile_user');
+        return view ('users.detail_user');
     }
 
     public function admin()
