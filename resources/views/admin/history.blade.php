@@ -35,7 +35,7 @@
             <td>5000</td>
             <td>Pinjam</td>
             <td>2020/05/05</td>
-            <td>2020/05/27 </td>
+            <td> </td>
             <td><button type="submit" class="btn btn-3d btn-danger mr-2">Bayar Denda</button> </td>
           </tr>
           <tr role="row" class="odd">
@@ -45,8 +45,8 @@
             <td>Pdkk </td>
             <td></td>
             <td>Kembali</td>
-            <td></td>
-            <td></td>
+            <td>2020/05/05</td>
+            <td>2020/05/27</td>
             <td><button type="submit" class="btn btn-3d btn-danger mr-2">Bayar Denda</button></td>
           </tr>
         </tbody>

@@ -10,7 +10,7 @@
                     </li>
                     
                         <li class="active ripple">
-                      <a class="tree-toggle nav-header"><span class="fa-home fa"></span> Peminjaman Buku 
+                      <a class="tree-toggle nav-header"><span class="fa fa-child"></span> Peminjaman Buku 
                         <span class="fa-angle-right fa right-arrow text-right"></span>
                       </a>
                       <ul class="nav nav-list tree" style="display: none;">
@@ -20,7 +20,7 @@
 
                     
                     <li class="ripple"><a class="tree-toggle nav-header">
-                    <span class="fa fa-pencil-square"></span> History  <span class="fa-angle-right fa right-arrow text-right"></span> </a>
+                    <span class="fa fa-history"></span> History  <span class="fa-angle-right fa right-arrow text-right"></span> </a>
                       <ul class="nav nav-list tree" style="display: none;">
                         <li><a href="{{URL::to('/History-user')}}">Peminjaman</a></li>
                         

@@ -52,6 +52,8 @@ Route::get('Peminjaman-buku' , 'User\UserController@Peminjaman');
 Route::get('History' , 'User\UserController@History');
 Route::get('Peminjaman-buku-user' , 'User\UserController@PeminjamanUser');
 Route::get('History-user' , 'User\UserController@HistoryUser');
+Route::get('My_Profile' , 'User\UserController@MyProfile');
+Route::get('Profile_user' , 'User\UserController@Profile');
 
 
 
