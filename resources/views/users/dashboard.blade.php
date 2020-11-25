@@ -39,7 +39,7 @@
                         </div> 
 
                     </div>
-                                            <img src="asset/img/uh.png" class="img-responsive">  
+                                            <img src="asset/img/uh.png" class="img-responsive">   
                   </div>                    
                 </div>
 @endsection
