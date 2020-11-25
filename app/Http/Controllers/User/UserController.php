@@ -72,7 +72,7 @@ class UserController extends Controller
         return view ('admin.My_Profile');
     }
 
-    public function Profile()
+    public function Profile_user()
     {
         return view ('users.Profile_user');
     }
