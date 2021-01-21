@@ -46,14 +46,21 @@ Route::get('/index', 'user\UserController@admin')->name('dashboard.admin');
 Route::get('home','HomeController@index');
 Route::get('list-buku' , 'User\UserController@ListBuku');
 Route::get('list-user' , 'User\UserController@ListUser');
-Route::get('add-book' , 'User\UserController@AddBook');
+Route::get('book' , 'User\UserController@Book');
+Route::get('tambah_buku' , 'User\UserController@TambahBuku');
 Route::get('list-buku-admin' , 'User\UserController@ListBukuAdmin');
 Route::get('Peminjaman-buku' , 'User\UserController@Peminjaman');
 Route::get('History' , 'User\UserController@History');
 Route::get('Peminjaman-buku-user' , 'User\UserController@PeminjamanUser');
 Route::get('History-user' , 'User\UserController@HistoryUser');
+
 Route::get('My_Profile' , 'User\UserController@MyProfile');
 Route::get('Profile_user' , 'User\UserController@Profile_user');
+
+Route::get('detail_admin' , 'User\UserController@DetailAdmin');
+Route::get('detail_users' , 'User\UserController@DetailUserAdmin');
+Route::get('detail_user' , 'User\UserController@DetailUser');
+
 
 
 

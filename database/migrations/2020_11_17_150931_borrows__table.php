@@ -15,21 +15,12 @@ class BorrowsTable extends Migration
     {
         Schema::create('borrows', function (Blueprint $table) {
             $table->bigIncrements('borrow_id');
-            $table->bigInteger('user_id_created_by')->unsigned();
-            $table->foreign('user_id_created_by')->references('usr_id')->on('users')->onDelete('cascade');
-            $table->bigInteger('user_id_updated_by')->unsigned();
-            $table->foreign('user_id_updated_by')->references('usr_id')->on('users')->onDelete('cascade');
-            $table->bigInteger('user_id_deleted_by')->unsigned();
-            $table->foreign('user_id_deleted_by')->references('usr_id')->on('users')->onDelete('cascade');
-            $table->bigInteger('book_id_created_by')->unsigned();
-            $table->foreign('book_id_created_by')->references('book_id')->on('books')->onDelete('cascade');
-            $table->bigInteger('book_id_updated_by')->unsigned();
-            $table->foreign('book_id_updated_by')->references('book_id')->on('books')->onDelete('cascade');
-            $table->bigInteger('book_id_deleted_by')->unsigned();
-            $table->foreign('book_id_deleted_by')->references('book_id')->on('books')->onDelete('cascade');
-            $table->bigInteger('total_borrow');
-            $table->bigInteger('stock');
-            $table->string('borrow_status');
+            $table->biginteger('borrow_book_id');
+            $table->biginteger('borrow_user_id');
+            $table->biginteger('borrow_total_books');
+            $table->date('borrow_date');
+            $table->date('borrow_back_date');
+            $table->string('borrow_fine');
             $table->timestamps();
         });
     }

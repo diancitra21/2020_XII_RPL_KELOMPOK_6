@@ -24,29 +24,20 @@
                         <span class="fa-angle-right fa right-arrow text-right"></span>
                       </a>
                       <ul class="nav nav-list tree" style="display: none;">
-                        <li><a href="{{URL::to('/add-book')}}">Tambah Buku</a></li>
-                        <li><a href="{{URL::to('/list-buku-admin')}}">List Buku </a></li>
+                        <li><a href="{{URL::to('/book')}}">Kelola Buku</a></li>
+                        <li><a href="{{URL::to('/list-buku-admin')}}">Daftar Buku </a></li>
                       </ul>
                     </li>
                     <li class="ripple">
                       <a class="tree-toggle nav-header">
-                        <span class="fa-area-chart fa"></span> Peminjaman
+                        <span class="fa-area-chart fa"></span>Kelola Peminjaman
                         <span class="fa-angle-right fa right-arrow text-right"></span>
                       </a>
                       <ul class="nav nav-list tree" style="display: none;">
-                        <li><a href="{{URL::to('/Peminjaman-buku')}}">List Peminjaman</a></li>
+                        <li><a href="{{URL::to('/Peminjaman-buku')}}"> Peminjaman</a></li>
                         
                       </ul>
 
-                    </li>
-                    <li class="ripple"><a class="tree-toggle nav-header">
-                    <span class="fa fa-history"></span> History  <span class="fa-angle-right fa right-arrow text-right"></span> </a>
-                      <ul class="nav nav-list tree" style="display: none;">
-                        <li><a href="{{URL::to('/History')}}">List History</a></li>
-                        
-                      
-
-                       
             
                 </div>
             </div>

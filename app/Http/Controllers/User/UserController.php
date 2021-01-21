@@ -22,10 +22,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('users.dashboard');
-    }
+    
 
     public function ListBuku()
     {
@@ -37,9 +34,14 @@ class UserController extends Controller
         return view ('admin.list-user');
     }
 
-    public function AddBook()
+    public function Book()
     {
-        return view ('admin.add-book');
+        return view ('admin.book');
+    }
+
+    public function TambahBuku()
+    {
+        return view ('admin.tambah_buku');
     }
 
     public function ListBukuAdmin()
@@ -67,14 +69,19 @@ class UserController extends Controller
         return view ('users.history-user');
     }
 
-    public function MyProfile()
+    public function DetailAdmin()
     {
-        return view ('admin.My_Profile');
+        return view ('admin.detail_admin');
+    }
+    public function DetailUserAdmin()
+    {
+        return view ('admin.detail_users');
     }
 
-    public function Profile_user()
+    public function DetailUser()
+
     {
-        return view ('users.Profile_user');
+        return view ('users.detail_user');
     }
 
     public function admin()
