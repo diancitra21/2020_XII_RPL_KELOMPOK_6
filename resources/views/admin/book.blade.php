@@ -17,6 +17,7 @@
                         <tr role="row">
                           <th class="sorting_asc" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 80px;">Id</th>
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 134px;">Judul Buku</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 60px;">Kelas</th>
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 60px;">Penerbit</th>
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 51px;">Jumlah Halaman</th>
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Stok Buku</th>
@@ -28,11 +29,12 @@
                       <tr role="row" class="odd">
                         <td>1</td>
                         <td>Indonesia</td>
+                        <td>10</td>
                         <td>Buku Kita</td>
                         <td>300</td>
                         <td>70</td>                        
                         <td>Buku Pelajaran</td>
-                        <td><a href = "{{URL::to('/edit_buku')}}"> <span class="fa fa-edit fa-2x"></span> </a>
+                        <td><a href = "{{URL::to('/edit')}}"> <span class="fa fa-edit fa-2x"></span> </a>
                             <a href="{{URL::to('/hapus-admin')}}"><span class="fa fa-trash fa-2x"></span></a>
                         </td>
 

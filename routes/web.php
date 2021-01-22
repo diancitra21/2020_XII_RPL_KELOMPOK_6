@@ -60,6 +60,10 @@ Route::get('Profile_user' , 'User\UserController@Profile_user');
 Route::get('detail_admin' , 'User\UserController@DetailAdmin');
 Route::get('detail_users' , 'User\UserController@DetailUserAdmin');
 Route::get('detail_user' , 'User\UserController@DetailUser');
+Route::get('dashboard' , 'User\UserController@DashboardAdmin');
+Route::get('edit' , 'User\UserController@Update');
+
+
 
 
 

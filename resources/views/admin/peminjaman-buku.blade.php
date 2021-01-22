@@ -11,7 +11,7 @@
               <div class="col-sm-6">
                 
                 <div class="col-sm-6">
-                  <div id="datatables-example_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control input-sm" placeholder="" aria-controls="datatables-example"></label></div></div></div>
+                  <div id="datatables-example_filter" class="dataTables_filter"><label><input type="search" class="form-control input-sm" placeholder="Search" aria-controls="datatables-example"></label></div></div></div>
                   <div class="row">
                     <div class="col-sm-12"><table id="datatables-example" class="table table-striped table-bordered dataTable no-footer" width="100%" cellspacing="0" role="grid" aria-describedby="datatables-example_info" style="width: 100%;">
                       <thead>
@@ -35,8 +35,8 @@
                         <td>2020-01-01</td>
                         <td>2020-01-19</td>
                         <td></td>
-                        <td><button type="submit" class="btn btn-3d btn-success mr-2"><a href = "{{URL::to('/History')}}">Pinjam</a></button>
-                          <button type="submit" class="btn btn-3d btn-danger mr-2"><a href = "{{URL::to('/History')}}">Kembali</a></button></td>
+                        <td><button type="submit" class="btn btn-3d btn-success mr-2">Bayar Denda</button>
+                          <button type="submit" class="btn btn-3d btn-danger mr-2">Kembali</button></td>
                           
                       
                     </tbody>

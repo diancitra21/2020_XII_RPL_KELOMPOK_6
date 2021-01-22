@@ -23,7 +23,9 @@ class UserController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     
-
+    public function index(){
+       return view('users.dashboard');
+    }
     public function ListBuku()
     {
         return view ('users.list-buku');
@@ -54,9 +56,9 @@ class UserController extends Controller
         return view ('admin.peminjaman-buku');
     }
 
-    public function History()
+    public function DashboardAdmin()
     {
-        return view ('admin.history');
+        return view ('admin.dashboard');
     }
 
     public function PeminjamanUser()
@@ -87,5 +89,8 @@ class UserController extends Controller
     public function admin()
     {
         return view('admin.dashboard');
+    }
+    public function Update(){
+            return view('admin.edit');
     }
 }

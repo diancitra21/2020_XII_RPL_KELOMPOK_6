@@ -7,9 +7,7 @@ use App\Models\Books;
 
 class BookController extends Controller
 {
-    public function index(){
- 	   return view('users.dashboard');
-    }
+    
     public function add_books(){
         $book = books::all();
     	return view('admin/book', ['books' => $book]);

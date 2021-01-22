@@ -15,6 +15,7 @@
         html,
         body {
             background-color: #fff;
+            background-image: 'asset/img/17.jpg';
             color: #636b6f;
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
@@ -67,6 +68,8 @@
 </head>
 
 <body>
+    
+        
     <div class="flex-center position-ref full-height">
         @if (Route::has('login'))
         <div class="top-right links">
@@ -108,6 +111,7 @@
             </div>
         </div>
     </div>
+
 </body>
 
 </html>

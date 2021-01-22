@@ -5,7 +5,7 @@
               <div class="col-sm-12">
                 <div class="col-md-12 panel">
                   <div class="col-md-12 panel-heading">
-                    <h3>Form Tambah Buku</h3>
+                    <h3>Form Edit Buku</h3>
                   </div>
                   <div class="col-md-12 panel-body">
                     <div class="col-md-12">
@@ -60,4 +60,4 @@
                 </div>
               </div>
 
-@endsection
+@endsection  
