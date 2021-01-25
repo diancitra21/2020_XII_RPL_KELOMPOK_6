@@ -3,28 +3,49 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Books;
+use App\Books;
 
 class BookController extends Controller
 {
-    
-    public function add_books(){
-        $book = books::all();
-    	return view('admin/book', ['books' => $book]);
+    public function index()
+    {
+        $book = Books::all();
+        return view ('admin.book',compact('book'));
+    }
+    public function add_book()
+    {
+        return view ('admin.tambah_buku');
+    }
+    public function save_book(Request $request)
+    {
+        Books::create([
+            'title_book' =>$request->judul_buku,
+            'class' =>$request->kelas,
+            'book_publisher' =>$request->penerbit,
+            'book_page_total' =>$request->jumlah_halaman,
+            'book_total' =>$request->total_buku,
+            'book_category' =>$request->kategori_buku
+        ]);
+        return redirect('/book');
     }
 
-    public function save_books(Request $request){
-        $this->validate($request, [
-            'book_title'            => 'required|min:3',
-            'book_publisher_id'     => 'required',
-            'book_page_total'       => 'required',
-            'book_total'            => 'required',
-            'book_category'         => 'required',
-            ]);
-        
-    	$book = new Books;
-    	$book->save_books($request->all());
-    	return redirect('/books');
+    public function edit($book_id)
+    {
+        $book = Books::find($book_id);
+        return view ('admin.edit-book',compact('book'));
     }
 
+    public function update(Request $request, $book_id)
+    {
+        $book = Books::find($book_id);
+        $book->title_book = $request->judul_buku;
+        $book->class = $request->kelas;
+        $book->book_publisher = $request->penerbit;
+        $book->book_page_total = $request->jumlah_halaman;
+        $book->book_total = $request->jumlah_buku;
+        $book->book_category = $request->kategori_buku;
+        $book->update();
+        return redirect('/book');
     }
+   
+}

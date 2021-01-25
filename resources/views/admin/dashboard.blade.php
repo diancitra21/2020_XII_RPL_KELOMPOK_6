@@ -1,5 +1,4 @@
 @extends('layouts.master-admin')
-
 @section('content')
 <!-- start: content -->
  <div id="content">

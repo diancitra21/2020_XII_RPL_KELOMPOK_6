@@ -16,11 +16,13 @@ class BooksTable extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->bigIncrements('book_id');
             $table->string('title_book');
+            $table->bigInteger('class');
             $table->string('book_publisher');
             $table->bigInteger('book_page_total');
             $table->string('book_total');
             $table->string('book_category');
             $table->timestamps();
+            $table->softDeletes('deleted_at', 0);
         });
 
     }

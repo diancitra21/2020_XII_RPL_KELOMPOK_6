@@ -27,7 +27,7 @@
               <ul class="nav navbar-nav navbar-right user-nav">
                 <li class="user-name"><span>{{ Auth::user()->usr_name }}</span></li>
                   <li class="dropdown avatar-dropdown">
-                   <img src="asset/img/avatar.jpg" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
+                   <img src="{{asset('asset/img/avatar.jpg')}}" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
                    <ul class="dropdown-menu user-dropdown">
                      <li><a href="{{URL::to('detail_admin')}}"><span class="fa fa-user"></span> My Profile</a></li>
                           <li><a href="{{ route('logout') }} " onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> <span class="fa fa-power-off ">{{ __('Logout') }}</span></a></li>

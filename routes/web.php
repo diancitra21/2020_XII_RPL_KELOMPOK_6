@@ -40,14 +40,22 @@ Route::get('/register-staff', 'Auth\RegisterController@registerStaff');
 
 //Route Untuk Admin, Student, Teacher, Staff TU, jika register dan login maka akan ke halaman ini 
 Route::group(['middleware' => ['auth', 'verified']], function () {
-    Route::get('/dashboard', 'User\UserController@index')->name('dashboard.users');
+    Route::get('/dashboard', 'User\UserController@DashboardAdmin')->name('dashboard.admin');
 });
-Route::get('/index', 'user\UserController@admin')->name('dashboard.admin');
-Route::get('home','HomeController@index');
+//kelola buku
+Route::get('book' , 'BookController@index');
+Route::get('tambah_buku' , 'BookController@add_book');
+Route::post('book' , 'BookController@save_book');
+Route::get('edit-book/{book_id}' , 'BookController@edit');
+Route::post('update/{book_id}' , 'BookController@update');
+
+
+
+
 Route::get('list-buku' , 'User\UserController@ListBuku');
 Route::get('list-user' , 'User\UserController@ListUser');
-Route::get('book' , 'User\UserController@Book');
-Route::get('tambah_buku' , 'User\UserController@TambahBuku');
+
+
 Route::get('list-buku-admin' , 'User\UserController@ListBukuAdmin');
 Route::get('Peminjaman-buku' , 'User\UserController@Peminjaman');
 Route::get('History' , 'User\UserController@History');
@@ -60,8 +68,7 @@ Route::get('Profile_user' , 'User\UserController@Profile_user');
 Route::get('detail_admin' , 'User\UserController@DetailAdmin');
 Route::get('detail_users' , 'User\UserController@DetailUserAdmin');
 Route::get('detail_user' , 'User\UserController@DetailUser');
-Route::get('dashboard' , 'User\UserController@DashboardAdmin');
-Route::get('edit' , 'User\UserController@Update');
+
 
 
 

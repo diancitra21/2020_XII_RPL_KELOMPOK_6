@@ -26,19 +26,20 @@
                       </tr>
                       </thead>
                       <tbody>    
+                        @foreach($book as $data)
                       <tr role="row" class="odd">
-                        <td>1</td>
-                        <td>Indonesia</td>
-                        <td>10</td>
-                        <td>Buku Kita</td>
-                        <td>300</td>
-                        <td>70</td>                        
-                        <td>Buku Pelajaran</td>
-                        <td><a href = "{{URL::to('/edit')}}"> <span class="fa fa-edit fa-2x"></span> </a>
-                            <a href="{{URL::to('/hapus-admin')}}"><span class="fa fa-trash fa-2x"></span></a>
+                        <td>{{$data->book_id}}</td>
+                        <td>{{$data ->title_book}}</td>
+                        <td>{{$data ->class}}</td>
+                        <td>{{$data ->book_publisher}} </td>
+                        <td>{{$data ->book_page_total}} </td>
+                        <td>{{$data ->book_total}} </td>                        
+                        <td>{{$data ->book_category}} </td>
+                        <td><a href = "{{URL::to('edit-book/'.$data->book_id)}}"> <button type="submit" class="btn btn-3d btn-primary mr-2">Edit</button>
+                        <button type="submit" class="btn btn-3d btn-danger mr">delete</button>
                         </td>
-
                       </tr>
+                      @endforeach
                       <tr role="row" class="odd">
                          
                       </tr>
@@ -55,20 +56,12 @@
                   </table>
                 </div>
               </div>
-              <div class="col-sm-7">
-                <div class="dataTables_paginate paging_simple_numbers" id="datatables-example_paginate">
-                  <ul class="pagination">
-                    <li class="paginate_button previous disabled" id="datatables-example_previous"><a href="#" aria-controls="datatables-example" data-dt-idx="0" tabindex="0">Previous</a></li>
-                    <li class="paginate_button active"><a href="#" aria-controls="datatables-example" data-dt-idx="1" tabindex="0">1</a></li>
-                    <li class="paginate_button "><a href="#" aria-controls="datatables-example" data-dt-idx="2" tabindex="0">2</a></li>
-                    <li class="paginate_button "><a href="#" aria-controls="datatables-example" data-dt-idx="3" tabindex="0">3</a></li>
-                    <li class="paginate_button "><a href="#" aria-controls="datatables-example" data-dt-idx="4" tabindex="0">4</a></li>
-                    <li class="paginate_button "><a href="#" aria-controls="datatables-example" data-dt-idx="5" tabindex="0">5</a></li>
-                    <li class="paginate_button "><a href="#" aria-controls="datatables-example" data-dt-idx="6" tabindex="0">6</a></li>
-                    <li class="paginate_button next" id="datatables-example_next"><a href="#" aria-controls="datatables-example" data-dt-idx="7" tabindex="0">Next</a></li>
-                  </ul>
-                </div>
+              <div class="row">
+            <div class="col-sm-12 col-md-7">
+              <div class="dataTables_paginate paging_simple_numbers" id="datatable-buttons_paginate">
               </div>
+            </div>
+          </div>
             </div>
           </div>
         </div>

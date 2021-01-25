@@ -13,6 +13,7 @@ class BookSeeder extends Seeder
     {
          DB::table('books')->insert([
             'title_book'            => 'Indonesia',
+            'class'                 => 12,
             'book_publisher'     => 'Buku Kita',
             'book_page_total'       => 300,
             'book_total'            => 70,

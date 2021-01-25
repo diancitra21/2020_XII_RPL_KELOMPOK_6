@@ -35,16 +35,7 @@ class UserController extends Controller
     {
         return view ('admin.list-user');
     }
-
-    public function Book()
-    {
-        return view ('admin.book');
-    }
-
-    public function TambahBuku()
-    {
-        return view ('admin.tambah_buku');
-    }
+    
 
     public function ListBukuAdmin()
     {
@@ -86,11 +77,6 @@ class UserController extends Controller
         return view ('users.detail_user');
     }
 
-    public function admin()
-    {
-        return view('admin.dashboard');
-    }
-    public function Update(){
-            return view('admin.edit');
-    }
+    
+    
 }
