@@ -35,9 +35,16 @@
                         <td>{{$data ->book_page_total}} </td>
                         <td>{{$data ->book_total}} </td>                        
                         <td>{{$data ->book_category}} </td>
-                        <td><a href = "{{URL::to('edit-book/'.$data->book_id)}}"> <button type="submit" class="btn btn-3d btn-primary mr-2">Edit</button>
-                        <button type="submit" class="btn btn-3d btn-danger mr">delete</button>
-                        </td>
+
+                          <td>  
+                              
+                                  <a href = "{{URL::to('edit-book/'.$data->book_id)}}"> <button type="submit" class="btn btn-3d btn-primary mr-2">Edit</button>
+                                    <a href="{{URL::to('delete/'.$data->book_id)}}">
+                        <button type="submit" name="submit" class="btn btn-3d btn-danger mr">delete</button>
+                        {{csrf_field()}}
+                        
+                              </form>
+                          </td>
                       </tr>
                       @endforeach
                       <tr role="row" class="odd">

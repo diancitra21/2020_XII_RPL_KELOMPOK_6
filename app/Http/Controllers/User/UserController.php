@@ -77,6 +77,9 @@ class UserController extends Controller
         return view ('users.detail_user');
     }
 
-    
+    public function admin()
+    {
+        return view('admin.dashboard');
+    }
     
 }

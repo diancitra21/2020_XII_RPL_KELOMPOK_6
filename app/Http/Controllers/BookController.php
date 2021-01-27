@@ -11,6 +11,8 @@ class BookController extends Controller
     {
         $book = Books::all();
         return view ('admin.book',compact('book'));
+
+        
     }
     public function add_book()
     {
@@ -47,5 +49,18 @@ class BookController extends Controller
         $book->update();
         return redirect('/book');
     }
-   
+
+    public function delete($book_id)
+    {
+        $book = Books::find($book_id);
+        $book->delete();
+        return redirect('/book');
+    }
+
+    public function list_book()
+    {
+        $book = Books::all();
+        return view('admin.dashboard', ['book' => $book]);
+    }
+
 }

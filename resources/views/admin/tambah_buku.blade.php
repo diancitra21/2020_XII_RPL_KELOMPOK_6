@@ -21,12 +21,7 @@
                         <input type="text" name="kelas" class="form-text mask-time" required="">
                         <span class="bar"></span>
                         <label>Kelas</label>
-                        <select>
-                          <option>10</option>
-                          <option>11</option>
-                          <option>12</option>
-                          <option>Tidak Ada Kelas</option>
-                        </select>
+                        
                       </div>
 
                       <div class="form-group form-animate-text" style="margin-top:40px !important;">

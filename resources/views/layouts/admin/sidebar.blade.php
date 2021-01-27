@@ -17,7 +17,6 @@
                       <a href="{{URL::to('/dashboard')}}"><span class="fa fa-home"></span> Dashboard 
                         <span class="fa-angle-right fa right-arrow text-right "></span>
                       </a>
-                      
                     <li class="active ripple">
                       <a class="tree-toggle nav-header"><span class="fa fa-child"></span> User 
                         <span class="fa-angle-right fa right-arrow text-right"></span>
