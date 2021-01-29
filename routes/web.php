@@ -45,11 +45,11 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 Route::get('/dashboard', 'BookController@list_book')->name('dashboard.admin');
 Route::get('book' , 'BookController@index');
 Route::get('tambah_buku' , 'BookController@add_book');
-Route::post('book' , 'BookController@save_book');
+Route::post('book' , 'BookController@save');
 Route::get('edit-book/{book_id}' , 'BookController@edit');
 Route::post('update/{book_id}' , 'BookController@update');
 Route::get('delete/{book_id}' , 'BookController@delete');
-Route::get('/list-buku', 'BookController@list_book');
+Route::get('/list-book', 'BookController@list_book');
 
 
 

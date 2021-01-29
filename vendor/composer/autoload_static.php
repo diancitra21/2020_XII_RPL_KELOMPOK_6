@@ -507,6 +507,7 @@ class ComposerStaticInit77db32c3bd8eeb7a900d4ddbf1f8b249
     );
 
     public static $classMap = array (
+        'App\\Books' => __DIR__ . '/../..' . '/app/Books.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\AccountController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AccountController.php',
@@ -630,6 +631,7 @@ class ComposerStaticInit77db32c3bd8eeb7a900d4ddbf1f8b249
         'Carbon\\Traits\\Units' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Units.php',
         'Carbon\\Traits\\Week' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Week.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
+        'ClassSeeder' => __DIR__ . '/../..' . '/database/seeds/ClassSeeder.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
         'Cron\\DayOfMonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/DayOfMonthField.php',

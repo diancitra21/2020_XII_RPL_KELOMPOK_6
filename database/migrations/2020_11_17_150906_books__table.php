@@ -16,7 +16,8 @@ class BooksTable extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->bigIncrements('book_id');
             $table->string('title_book');
-            $table->bigInteger('class');
+            $table->foreignId('class_id');
+            $table->foreign('class_id') -> references('class_id')->on('classes');
             $table->string('book_publisher');
             $table->bigInteger('book_page_total');
             $table->string('book_total');

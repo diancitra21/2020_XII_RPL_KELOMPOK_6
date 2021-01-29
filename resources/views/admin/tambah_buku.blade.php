@@ -18,9 +18,12 @@
 
 
                       <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" name="kelas" class="form-text mask-time" required="">
-                        <span class="bar"></span>
-                        <label>Kelas</label>
+                        <h4>kelas</h4>
+                        <select name="kelas" class="form-control">
+                          @foreach($class as $data)
+                          <option value="{{ $data->class_id }}"> {{ $data->tingkatan }} </option>
+                          @endforeach
+                        </select>
                         
                       </div>
 

@@ -22,9 +22,9 @@
                       <tbody>    
                       <tr role="row" class="odd">
                         <td>1</td>
-                        <td>Indonesia</td>
-                        <td>Buku Kita</td>
-                        <td>300</td>
+                        <td>Evi nopianti</td>
+                        <td>nopiantievi29@gmail.com</td>
+                        <td>08976643345</td>
 
                       </tr>
                       <tr role="row" class="odd">
@@ -43,20 +43,7 @@
                   </table>
                 </div>
               </div>
-              <div class="col-sm-7">
-                <div class="dataTables_paginate paging_simple_numbers" id="datatables-example_paginate">
-                  <ul class="pagination">
-                    <li class="paginate_button previous disabled" id="datatables-example_previous"><a href="#" aria-controls="datatables-example" data-dt-idx="0" tabindex="0">Previous</a></li>
-                    <li class="paginate_button active"><a href="#" aria-controls="datatables-example" data-dt-idx="1" tabindex="0">1</a></li>
-                    <li class="paginate_button "><a href="#" aria-controls="datatables-example" data-dt-idx="2" tabindex="0">2</a></li>
-                    <li class="paginate_button "><a href="#" aria-controls="datatables-example" data-dt-idx="3" tabindex="0">3</a></li>
-                    <li class="paginate_button "><a href="#" aria-controls="datatables-example" data-dt-idx="4" tabindex="0">4</a></li>
-                    <li class="paginate_button "><a href="#" aria-controls="datatables-example" data-dt-idx="5" tabindex="0">5</a></li>
-                    <li class="paginate_button "><a href="#" aria-controls="datatables-example" data-dt-idx="6" tabindex="0">6</a></li>
-                    <li class="paginate_button next" id="datatables-example_next"><a href="#" aria-controls="datatables-example" data-dt-idx="7" tabindex="0">Next</a></li>
-                  </ul>
-                </div>
-              </div>
+             
             </div>
           </div>
         </div>

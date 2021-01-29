@@ -4,30 +4,41 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Books;
+use App\Classes;
+
 
 class BookController extends Controller
 {
     public function index()
     {
-        $book = Books::all();
+        $book  = Books::join('classes', 'books.class_id', '=', 'classes.class_id')->select('books.*', 'classes.*')->get();
         return view ('admin.book',compact('book'));
 
         
     }
     public function add_book()
     {
-        return view ('admin.tambah_buku');
+        $class = Classes::all();
+        return view('admin.tambah_buku',compact('class'));
     }
-    public function save_book(Request $request)
-    {
-        Books::create([
-            'title_book' =>$request->judul_buku,
-            'class' =>$request->kelas,
-            'book_publisher' =>$request->penerbit,
-            'book_page_total' =>$request->jumlah_halaman,
-            'book_total' =>$request->total_buku,
-            'book_category' =>$request->kategori_buku
-        ]);
+    public function save(Request $request){
+        $this->validate($request, [
+            'title_book'            =>$request->judul_buku,
+            'class_id'     => $request->kelas,
+            'book_publisher'       => $request->penerbit,
+            'book_page_total'            => $request->jumlah_halaman,
+            'book_total'            => $request->total_buku,
+            'book_category'         => $request->kategori_buku,
+            ]);
+        
+        $book = new Books;
+         $book->title_book = $request->judul_buku;
+        $book->class_id = $request->kelas;
+        $book->book_publisher = $request->penerbit;
+        $book->book_page_total = $request->jumlah_halaman;
+        $book->book_total = $request->total_buku;
+        $book->book_category = $request->kategori_buku;
+        $book->save();
         return redirect('/book');
     }
 
@@ -41,7 +52,7 @@ class BookController extends Controller
     {
         $book = Books::find($book_id);
         $book->title_book = $request->judul_buku;
-        $book->class = $request->kelas;
+        $book->class_id = $request->kelas;
         $book->book_publisher = $request->penerbit;
         $book->book_page_total = $request->jumlah_halaman;
         $book->book_total = $request->jumlah_buku;
@@ -59,8 +70,8 @@ class BookController extends Controller
 
     public function list_book()
     {
-        $book = Books::all();
-        return view('admin.dashboard', ['book' => $book]);
+        $book = Books::join('classes', 'books.class_id', '=', 'classes.class_id')->select('books.*', 'classes.*')->get();
+        return view('admin.list-book', ['book' => $book]);
     }
 
 }

@@ -9,14 +9,14 @@
           <div id="datatables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
             <div class="row">
               <div class="col-sm-6">
-                <a href = "{{URL::to('/tambah_buku')}}" class="btn btn-3d btn-danger mr-2">Tambah Buku</a><br><br><br><br><br>
-                  <div id="datatables-example_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control input-sm" placeholder="" aria-controls="datatables-example"></label></div></div></div>
+                <a href = "{{URL::to('/tambah_buku')}}" class="btn btn-3d btn-danger mr-2">Tambah Buku</a><br><br><br>
+                  <div id="datatables-example_filter" class="dataTables_filter"></div></div></div>
                   <div class="row">
                     <div class="col-sm-12"><table id="datatables-example" class="table table-striped table-bordered dataTable no-footer" width="100%" cellspacing="0" role="grid" aria-describedby="datatables-example_info" style="width: 100%;">
                       <thead>
                         <tr role="row">
                           <th class="sorting_asc" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 80px;">Id</th>
-                          <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 134px;">Judul Buku</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 134px;">Judul Buku </th>
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 60px;">Kelas</th>
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 60px;">Penerbit</th>
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 51px;">Jumlah Halaman</th>
@@ -30,7 +30,7 @@
                       <tr role="row" class="odd">
                         <td>{{$data->book_id}}</td>
                         <td>{{$data ->title_book}}</td>
-                        <td>{{$data ->class}}</td>
+                        <td>{{$data ->tingkatan}}</td>
                         <td>{{$data ->book_publisher}} </td>
                         <td>{{$data ->book_page_total}} </td>
                         <td>{{$data ->book_total}} </td>                        

@@ -14,9 +14,8 @@
                      
 
 <li class="active ripple">
-                      <a href="{{URL::to('/dashboard')}}"><span class="fa fa-home"></span> Dashboard 
-                        <span class="fa-angle-right fa right-arrow text-right "></span>
-                      </a>
+                     
+                       
                     <li class="active ripple">
                       <a class="tree-toggle nav-header"><span class="fa fa-child"></span> User 
                         <span class="fa-angle-right fa right-arrow text-right"></span>
@@ -31,6 +30,10 @@
                         <span class="icons icon-book-open"></span> Buku
                         <span class="fa-angle-right fa right-arrow text-right"></span>
                       </a>
+                      <ul class="nav nav-list tree" style="display: none;">
+                        <li><a href="{{URL::to('/list-book')}}">Daftar Buku</a></li>
+                        
+                      </ul>
                       <ul class="nav nav-list tree" style="display: none;">
                         <li><a href="{{URL::to('/book')}}">Kelola Buku</a></li>
                         
