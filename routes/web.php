@@ -42,7 +42,7 @@ Route::get('/register-staff', 'Auth\RegisterController@registerStaff');
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/dashboard', 'BookController@list_book')->name('dashboard.users');
 });
-Route::get('/dashboard', 'BookController@list_book')->name('dashboard.admin');
+Route::get('/dashboard', 'User\UserController@DashboardAdmin')->name('dashboard.admin');
 Route::get('book' , 'BookController@index');
 Route::get('tambah_buku' , 'BookController@add_book');
 Route::post('book' , 'BookController@save');

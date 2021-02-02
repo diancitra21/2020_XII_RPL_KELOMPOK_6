@@ -1,84 +1,90 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-@section('content')
+  <meta charset="utf-8">
+  <meta name="description" content="Miminium Admin Template v.1">
+  <meta name="author" content="Isna Nur Azis">
+  <meta name="keyword" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Miminium</title>
 
-<body class="login-img3-body">
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+  <!-- start: Css -->
+  <link rel="stylesheet" type="text/css" href="asset/css/bootstrap.min.css">
 
-                <div class="card-body">
-                    @if ($message = Session::get('success'))
-                    <div class="alert alert-success alert-block">
-                        <button type="button" class="close" data-dismiss="alert"></button>
-                        <strong>{{$message}}</strong>
-                    </div>
-                    @endif
+  <!-- plugins -->
+  <link rel="stylesheet" type="text/css" href="asset/css/plugins/font-awesome.min.css"/>
+  <link rel="stylesheet" type="text/css" href="asset/css/plugins/simple-line-icons.css"/>
+  <link rel="stylesheet" type="text/css" href="asset/css/plugins/animate.min.css"/>
+  <link rel="stylesheet" type="text/css" href="asset/css/plugins/icheck/skins/flat/aero.css"/>
+  <link href="asset/css/style.css" rel="stylesheet">
+  <!-- end: Css -->
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}" id="submitForm">
-                        @csrf
+  <link rel="shortcut icon" href="asset/img/logomi.png">
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    </head>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+    <body id="mimin" class="dashboard form-signin-wrapper">
 
-                            <div class="col-md-6">
-                                <input id="usr_email" type="email" class="form-control @error('usr_email') is-invalid @enderror" name="usr_email" value="{{ old('usr_email') }}" autocomplete="email" autofocus>
+      <div class="container">
 
-                                @error('usr_email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+        <form class="form-signin" method="POST" action="{{ route('login') }}">
+{{ csrf_field() }}
+          <div class="panel periodic-login">
+              <span class="atomic-number">28</span>
+              <div class="panel-body text-center">
+                  <h1 class="atomic-symbol">Mi</h1>
+                  <p class="atomic-mass">14.072110</p>
+                  <p class="element-name">Miminium</p>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
+                  <i class="icons icon-arrow-down"></i>
+                  <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                    <input type="text" class="form-text" id="usr_email"  class="form-control @error('usr_email') is-invalid @enderror" name="usr_email" value="{{ old('usr_email') }}" autocomplete="email" autofocus required>
+                    <span class="bar"></span>
+                    <label>Username</label>
+                  </div>
+                  <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                    <input id="password" type="password" class="form-text @error('password') is-invalid @enderror" name="password" autocomplete="current-password" required>
+                    <span class="bar"></span>
+                    <label>Password</label>
+                  </div>
+                  <label class="pull-left">
+                  <input type="checkbox" class="icheck pull-left" name="checkbox1"/> Remember me
+                  </label>
+                  <input type="submit" class="btn col-md-12" value="SignIn"/>
+              </div>
+                <div class="text-center" style="padding:5px;">
+                    <a href="forgotpass.html">Forgot Password </a>
+                    <a href="register-student">| Signup</a>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-</body>
-@endsection
+          </div>
+        </form>
+
+      </div>
+
+      <!-- end: Content -->
+      <!-- start: Javascript -->
+      <script src="asset/js/jquery.min.js"></script>
+      <script src="asset/js/jquery.ui.min.js"></script>
+      <script src="asset/js/bootstrap.min.js"></script>
+
+      <script src="asset/js/plugins/moment.min.js"></script>
+      <script src="asset/js/plugins/icheck.min.js"></script>
+
+      <!-- custom -->
+      <script src="asset/js/main.js"></script>
+      <script type="text/javascript">
+       $(document).ready(function(){
+         $('input').iCheck({
+          checkboxClass: 'icheckbox_flat-aero',
+          radioClass: 'iradio_flat-aero'
+        });
+       });
+     </script>
+     <!-- end: Javascript -->
+   </body>
+   </html>

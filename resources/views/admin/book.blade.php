@@ -39,14 +39,19 @@
                           <td>  
                               
                                   <a href = "{{URL::to('edit-book/'.$data->book_id)}}"> <button type="submit" class="btn btn-3d btn-primary mr-2">Edit</button>
-                                    <a href="{{URL::to('delete/'.$data->book_id)}}">
-                        <button type="submit" name="submit" class="btn btn-3d btn-danger mr">delete</button>
-                        {{csrf_field()}}
+                                  <!--<a href="{{URL::to('delete/'.$data->book_id)}}">
+                        <button type="submit" name="submit" class="btn btn-3d btn-danger mr">delete</button>-->
+                          <a rel="{{$data->book_id}}" rel1="delete" href="{{URL::to('delete/'.$data->book_id)}}" class="btn btn-3d btn-danger mr-2" id="deleteBook">Delete</a>
+
+                      {{csrf_field()}}
                         
-                              </form>
+                              
                           </td>
                       </tr>
+
                       @endforeach
+                      @include('sweetalert::alert')
+
                       <tr role="row" class="odd">
                          
                       </tr>

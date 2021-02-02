@@ -1,6 +1,31 @@
 
 
 <!-- start: Javascript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#deleteBook').click(function(){
+            var id = $(this).attr('rel');
+            swal({
+                  title: "Are you sure?",
+                  text: "Your will not be able to recover this imaginary file!",
+                  type: "warning",
+                  showCancelButton: true,
+                  confirmButtonClass: "btn-danger",
+                  confirmButtonText: "Yes, delete it!",
+                  closeOnConfirm: false
+                },
+                function(){
+                    window.location.href='delete/'+"/"+id;
+                  swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                });
+        });
+    });
+</script>
+
+
+
     <script src="asset/js/jquery.min.js"></script>
     <script src="asset/js/jquery.ui.min.js"></script>
     <script src="asset/js/bootstrap.min.js"></script>

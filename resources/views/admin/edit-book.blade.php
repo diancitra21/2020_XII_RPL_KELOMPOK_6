@@ -18,13 +18,15 @@
                       </div>
 
 
-                      <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" class="form-text mask-time"name="kelas" required="" value="{{$book->class}}">
-                        <span class="bar"></span>
-                        <label>Kelas</label>
+                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                        <h4>kelas</h4>
+                        <select name="kelas" class="form-control">
+                          @foreach($class as $data)
+                          <option value="{{ $data->class_id }}"> {{ $data->tingkatan }} </option>
+                          @endforeach
+                        </select>
                         
                       </div>
-
                       <div class="form-group form-animate-text" style="margin-top:40px !important;">
                         <input type="text" class="form-text mask-time" name="penerbit" required="" value="{{$book->book_publisher}}">
                         <span class="bar"></span>
@@ -32,13 +34,13 @@
                       </div>
 
                       <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" name="jumlah_halaman" class="form-text mask-date_time"  required="" value="{{$book->book_page_total}}">
+                        <input type="number" maxlength="4" name="jumlah_halaman" class="form-text mask-date_time"  required="" value="{{$book->book_page_total}}">
                         <span class="bar"></span>
                         <label>Jumlah Halaman</label>
                       </div>
 
                       <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" name="jumlah_buku" class="form-text mask-cep"  required="" value="{{$book->book_total}}">
+                        <input type="number" maxlength="4" name="jumlah_buku" class="form-text mask-cep"  required="" value="{{$book->book_total}}">
                         <span class="bar"></span>
                         <label>Jumlah Buku</label>
                       </div>

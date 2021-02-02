@@ -34,13 +34,13 @@
                       </div>
 
                       <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" name="jumlah_halaman" class="form-text mask-date_time" required="">
+                        <input type="number" maxlength="4" name="jumlah_halaman" class="form-text mask-date_time" required="">
                         <span class="bar"></span>
                         <label>Jumlah Halaman</label>
                       </div>
 
                       <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" name="total_buku" class="form-text mask-cep" required="">
+                        <input type="number" maxlength="4"  name="total_buku" class="form-text mask-cep" required="">
                         <span class="bar"></span>
                         <label>Jumlah Buku</label>
                       </div>
