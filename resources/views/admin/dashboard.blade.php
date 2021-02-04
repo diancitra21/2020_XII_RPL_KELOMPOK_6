@@ -3,7 +3,9 @@
 <!-- start: content -->
  <div id="content">
   <div class="panel">
-   <div class="panel-body">
+   <div class="panel-body ">
+    <body style="background-image: url('asset/img/uh.png'); no-repeat fixed; background-size: 100% 100%;">
+
     <div class="col-md-6 col-sm-12">
      <h3 class="animated fadeInLeft">SMK Mahaputra</h3>
       <p class="animated fadeInDown"><span class="fa  fa-map-marker"></span> Sukamukti,Indonesia</p>
@@ -37,21 +39,34 @@
 </div>
 
 </div>
-</div>
+</body>
+<!--
+<div class="col-md-4">
+                              <div class="panel bg-light-blue">
+                                <div class="panel-body text-white">
+                                  <h2></h2>
+                               <center><h3><p><span class="icons icon-people"></span> Jumlah User</p></h3></center>
+                                    <div class="col-md-12 padding-0">
+                                      <div class="text-left col-md-7 col-xs-12 col-sm-7 padding-0">
+                                        
+                                        
+                                      </div>
+                                      
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
 
 <div class="col-md-4">
                               <div class="panel bg-light-blue">
                                 <div class="panel-body text-white">
-                                   <p class="animated fadeInUp quote"></p>
+                               <center><h3><p><span class="icons icon-book-open"></span> Jumlah Buku</p></h3></center>
                                     <div class="col-md-12 padding-0">
                                       <div class="text-left col-md-7 col-xs-12 col-sm-7 padding-0">
-                                        <span class="fa fa-twitter fa-2x"></span>
-                                        <span>22 May, 2015 via mobile</span>
+                                        
+                                        
                                       </div>
-                                      <div style="padding-top:8px;" class="text-right col-md-5 col-xs-12 col-sm-5 padding-0">
-                                        <span class="fa fa-retweet"></span> 2000
-                                        <span class="fa fa-star"></span> 3000
-                                      </div>
+                                      
                                     </div>
                                 </div>
                               </div>
@@ -60,6 +75,7 @@
 </div>
 
 
+</div>
 
 
 
@@ -73,5 +89,6 @@
 
 
 
-      
+
+      -->
 @endsection

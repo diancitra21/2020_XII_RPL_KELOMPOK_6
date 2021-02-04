@@ -27,19 +27,16 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
     </head>
-
-    <body id="mimin" class="dashboard form-signin-wrapper">
-
+    
+    <body id="mimin">
+      <div style="background-image: url('asset/img/mahaputra.jpg'); no-repeat fixed; background-size: 100% 100%;">
       <div class="container">
-
         <form class="form-signin" method="POST" action="{{ route('login') }}">
 {{ csrf_field() }}
           <div class="panel periodic-login">
-              <span class="atomic-number">28</span>
               <div class="panel-body text-center">
-                  <h1 class="atomic-symbol">Mi</h1>
-                  <p class="atomic-mass">14.072110</p>
-                  <p class="element-name">Miminium</p>
+                  <img class="card-img-top img-fluid" src="asset/img/22.png" alt="Card image cap">
+                  <p class="element-name"><h2>Perpustakaan</h2></p>
 
                   <i class="icons icon-arrow-down"></i>
                   <div class="form-group form-animate-text" style="margin-top:40px !important;">
@@ -63,8 +60,9 @@
                 </div>
           </div>
         </form>
-
-      </div>
+</div>
+</div>
+      
 
       <!-- end: Content -->
       <!-- start: Javascript -->

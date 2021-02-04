@@ -35,15 +35,20 @@
                         <td>{{$data ->book_page_total}} </td>
                         <td>{{$data ->book_total}} </td>                        
                         <td>{{$data ->book_category}} </td>
-
-                          <td>  
-                              
-                                  <a href = "{{URL::to('edit-book/'.$data->book_id)}}"> <button type="submit" class="btn btn-3d btn-primary mr-2">Edit</button>
+                        <td>
+                          
+                          <a href = "{{URL::to('edit-book/'.$data->book_id)}}" class="btn btn-3d btn-primary mr-2">Edit</a>
+                        
+                        <a href="{{('delete/'.$data->book_id)}}">
+                          <input type="hidden" name="book_id" value="<?=$data->book_id?>">
+                          <button onclick="return confirm('Yakin anda ingin menghapus?') "class="btn btn-3d btn-danger mr-2">Delete</button>
+                          {{csrf_field()}}
+                          
+                        
+                        
                                   <!--<a href="{{URL::to('delete/'.$data->book_id)}}">
                         <button type="submit" name="submit" class="btn btn-3d btn-danger mr">delete</button>-->
-                          <a rel="{{$data->book_id}}" rel1="delete" href="{{URL::to('delete/'.$data->book_id)}}" class="btn btn-3d btn-danger mr-2" id="deleteBook">Delete</a>
-
-                      {{csrf_field()}}
+                      
                         
                               
                           </td>

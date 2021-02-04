@@ -66,7 +66,7 @@ class BookController extends Controller
     {
         $book = Books::find($book_id);
         $book->delete();
-        return redirect('/book')->with('success', 'Data Berhasil Di HApus!');
+        return redirect('/book')->with('success', 'Data Berhasil Di Hapus!');
     }
 
     public function list_book()
