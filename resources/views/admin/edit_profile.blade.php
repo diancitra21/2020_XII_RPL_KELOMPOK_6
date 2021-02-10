@@ -31,7 +31,7 @@
             <div class="row">
             
                   <table>
-                    <form action="{{route('detail_admin.update', Auth::user()->usr_id)}}" method="POST" >
+                    <form action="{{URL::to('/detail_admin/update',$user->usr_id)}} " method="POST" >
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="hidden" name="_method" value="PUT">
                     <tr>

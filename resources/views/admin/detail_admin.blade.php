@@ -31,7 +31,8 @@
             <div class="row">
             
                   <table>
-                    
+                     <form action="{{URL::to('/detail_admin/update',auth::user()->usr_id)}}" method="POST">
+                      @csrf
                     <tr>
                       <th>
                      <div class="form-group form-animate-text" style="margin-top:40px !important;">
@@ -58,7 +59,7 @@
                       </tr><th>
                        <button type="submit" class="btn btn-3d btn-primary mr-2">Submit</button>
                    </th>
-                    
+                    </form>
                   </table>
 
               </div>

@@ -67,11 +67,11 @@ class UserController extends Controller
 
     public function update(Request $request, $usr_id) {
        $user = Users::find($usr_id);
-        $user->usr_name        = $request->username;
-        $user->usr_email          = $request->email;
+        $user->usr_name     = $request->username;
+        $user->usr_email    = $request->email;
         $user->usr_phone    = $request->phone;
         $user->update();
-        return redirect('/detail_admin')->with('success', 'Data Berhasil Di Edit!');
+        return redirect('/dashboard')->with('success', 'Data Berhasil Di Edit!');
     }
 
 

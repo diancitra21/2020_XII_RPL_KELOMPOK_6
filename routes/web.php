@@ -67,10 +67,11 @@ Route::get('Profile_user' , 'User\UserController@Profile_user');
 
 Route::get('detail_admin' , 'User\UserController@DetailAdmin');
 Route::get('detail_admin/{usr_id}' , 'User\UserController@edit');
-Route::post('update/{usr_id}' , 'User\UserController@update');
+Route::post('detail_admin/update/{usr_id}' , 'User\UserController@update');
 
 Route::get('detail_users' , 'User\UserController@DetailUserAdmin');
 Route::get('detail_user' , 'User\UserController@DetailUser');
+Route::get('list-user' , 'User\UserController@ListUser');
 
 
 
