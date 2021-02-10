@@ -34,8 +34,8 @@ class ComposerStaticInit77db32c3bd8eeb7a900d4ddbf1f8b249
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
-        '377b22b161c09ed6e5152de788ca020a' => __DIR__ . '/..' . '/spatie/laravel-permission/src/helpers.php',
         '6b34c85f7b1ad6faa15aa12109e030f2' => __DIR__ . '/..' . '/realrashid/sweet-alert/src/functions.php',
+        '377b22b161c09ed6e5152de788ca020a' => __DIR__ . '/..' . '/spatie/laravel-permission/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -514,6 +514,8 @@ class ComposerStaticInit77db32c3bd8eeb7a900d4ddbf1f8b249
 
     public static $classMap = array (
         'App\\Books' => __DIR__ . '/../..' . '/app/Books.php',
+        'App\\Borrows' => __DIR__ . '/../..' . '/app/Borrows.php',
+        'App\\Categories' => __DIR__ . '/../..' . '/app/Categories.php',
         'App\\Classes' => __DIR__ . '/../..' . '/app/Classes.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -525,6 +527,7 @@ class ComposerStaticInit77db32c3bd8eeb7a900d4ddbf1f8b249
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\BookController' => __DIR__ . '/../..' . '/app/Http/Controllers/BookController.php',
+        'App\\Http\\Controllers\\BorrowController' => __DIR__ . '/../..' . '/app/Http/Controllers/BorrowController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\User\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/UserController.php',
@@ -550,6 +553,7 @@ class ComposerStaticInit77db32c3bd8eeb7a900d4ddbf1f8b249
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack/CorsService.php',
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
         'BookSeeder' => __DIR__ . '/../..' . '/database/seeds/BookSeeder.php',
+        'BorrowSeeder' => __DIR__ . '/../..' . '/database/seeds/BorrowSeeder.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
         'Brick\\Math\\BigInteger' => __DIR__ . '/..' . '/brick/math/src/BigInteger.php',
         'Brick\\Math\\BigNumber' => __DIR__ . '/..' . '/brick/math/src/BigNumber.php',
@@ -638,6 +642,7 @@ class ComposerStaticInit77db32c3bd8eeb7a900d4ddbf1f8b249
         'Carbon\\Traits\\Units' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Units.php',
         'Carbon\\Traits\\Week' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Week.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
+        'CategorySeeder' => __DIR__ . '/../..' . '/database/seeds/CategorySeeder.php',
         'ClassSeeder' => __DIR__ . '/../..' . '/database/seeds/ClassSeeder.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',

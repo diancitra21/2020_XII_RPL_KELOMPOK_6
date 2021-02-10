@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Users;
 
 class UserController extends Controller
 {
@@ -14,7 +15,7 @@ class UserController extends Controller
      */
     public function __construct()
     {
-        // $this->middleware(['auth']);
+         $this->middleware(['auth']);
     }
 
     /**
@@ -35,17 +36,8 @@ class UserController extends Controller
     {
         return view ('admin.list-user');
     }
-    
 
-    public function ListBukuAdmin()
-    {
-        return view ('admin.list-buku-admin');
-    }
 
-    public function Peminjaman()
-    {
-        return view ('admin.peminjaman-buku');
-    }
 
     public function DashboardAdmin()
     {
@@ -65,7 +57,24 @@ class UserController extends Controller
     public function DetailAdmin()
     {
         return view ('admin.detail_admin');
+    
     }
+    public function edit($usr_id)
+    {
+        $user = Users::find($usr_id);
+        return view('admin.detail_admin', ['user' => $user]);
+    }
+
+    public function update(Request $request, $usr_id) {
+       $user = Users::find($usr_id);
+        $user->usr_name        = $request->username;
+        $user->usr_email          = $request->email;
+        $user->usr_phone    = $request->phone;
+        $user->update();
+        return redirect('/detail_admin')->with('success', 'Data Berhasil Di Edit!');
+    }
+
+
     public function DetailUserAdmin()
     {
         return view ('admin.detail_users');
@@ -82,5 +91,7 @@ class UserController extends Controller
         
         return view('admin.dashboard');
     }
+
+
     
 }

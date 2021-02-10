@@ -1,6 +1,8 @@
 @extends('layouts.app')
-
 @section('content')
+   
+   <div style="background-image: url('asset/img/mahaputra.jpg'); no-repeat fixed; background-size: 100% 100%;">
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -95,4 +97,6 @@
         </div>
     </div>
 </div>
+</div> <!-- end: Javascript -->
+ 
 @endsection

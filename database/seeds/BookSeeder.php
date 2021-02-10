@@ -17,7 +17,7 @@ class BookSeeder extends Seeder
             'book_publisher'     => 'Buku Kita',
             'book_page_total'       => 300,
             'book_total'            => 70,
-            'book_category'         => 'Pelajaran',
+            'category_id'         => 1,
         ]);
     }
 }

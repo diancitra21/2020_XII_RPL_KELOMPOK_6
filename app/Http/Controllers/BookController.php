@@ -5,39 +5,33 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Books;
 use App\Classes;
+use App\Categories;
+
 
 
 class BookController extends Controller
 {
     public function index()
     {
-        $book  = Books::join('classes', 'books.class_id', '=', 'classes.class_id')->select('books.*', 'classes.*')->get();
-        return view ('admin.book',compact('book'));
+        $book  = Books::join('classes', 'books.class_id', '=', 'classes.class_id')->join('categories', 'books.category_id', '=', 'categories.category_id')->select('books.*', 'classes.*', 'categories.*')->get();
+        return view ('admin.book',['book' => $book]);
 
         
     }
     public function add_book()
     {
         $class = Classes::all();
-        return view('admin.tambah_buku',compact('class'));
+        $category = Categories::all();
+        return view('admin.tambah_buku',['class'=> $class, 'category'=> $category]);
     }
-    public function save(Request $request){
-        $this->validate($request, [
-            'title_book'            =>$request->judul_buku,
-            'class_id'     => $request->kelas,
-            'book_publisher'       => $request->penerbit,
-            'book_page_total'            => $request->jumlah_halaman,
-            'book_total'            => $request->total_buku,
-            'book_category'         => $request->kategori_buku,
-            ]);
-        
+    public function save(Request $request){ 
         $book = new Books;
-         $book->title_book = $request->judul_buku;
-        $book->class_id = $request->kelas;
-        $book->book_publisher = $request->penerbit;
-        $book->book_page_total = $request->jumlah_halaman;
-        $book->book_total = $request->total_buku;
-        $book->book_category = $request->kategori_buku;
+         $book->title_book        = $request->judul_buku;
+        $book->class_id           = $request->kelas;
+        $book->book_publisher     = $request->penerbit;
+        $book->book_page_total    = $request->jumlah_halaman;
+        $book->book_total         = $request->total_buku;
+        $book->category_id      = $request->kategori_buku;
         $book->save();
         return redirect('/book')->with('success', 'Data Berhasil Disimpan!');
     }
@@ -46,18 +40,19 @@ class BookController extends Controller
     {
         $book = Books::find($book_id);
         $class = classes::all();
-        return view ('admin.edit-book',['book'=> $book, 'class'=> $class]);
+        $category = Categories::all();
+        return view ('admin.edit-book',['book'=> $book, 'class'=> $class, 'category' => $category]);
     }
 
     public function update(Request $request, $book_id)
     {
         $book = Books::find($book_id);
-        $book->title_book = $request->judul_buku;
-        $book->class_id = $request->kelas;
-        $book->book_publisher = $request->penerbit;
-        $book->book_page_total = $request->jumlah_halaman;
-        $book->book_total = $request->jumlah_buku;
-        $book->book_category = $request->kategori_buku;
+        $book->title_book        = $request->judul_buku;
+        $book->class_id          = $request->kelas;
+        $book->book_publisher    = $request->penerbit;
+        $book->book_page_total   = $request->jumlah_halaman;
+        $book->book_total        = $request->jumlah_buku;
+        $book->category_id     = $request->kategori_buku;
         $book->update();
         return redirect('/book')->with('success', 'Data Berhasil Diedit!');
     }
@@ -71,8 +66,19 @@ class BookController extends Controller
 
     public function list_book()
     {
-        $book = Books::join('classes', 'books.class_id', '=', 'classes.class_id')->select('books.*', 'classes.*')->get();
+         $book  = Books::join('classes', 'books.class_id', '=', 'classes.class_id')->join('categories', 'books.category_id', '=', 'categories.category_id')->select('books.*', 'classes.*', 'categories.*')->get();
         return view('admin.list-book', ['book' => $book]);
+    }
+
+    public function pinjam($book_id)
+    {
+        \DB::table('borrows')->insert([
+            'book_id' => $book_id,
+            'username' => $username,
+            'borrows_total_book' => $borrows_total_book,
+            'created_at' => date('Y-m-d M:i:s'),
+        ]);
+        return view('admin.peminjaman-buku');
     }
 
 }

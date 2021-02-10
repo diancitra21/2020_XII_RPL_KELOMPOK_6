@@ -1,4 +1,5 @@
-<?php
+
+.<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -21,7 +22,8 @@ class BooksTable extends Migration
             $table->string('book_publisher');
             $table->bigInteger('book_page_total');
             $table->string('book_total');
-            $table->string('book_category');
+            $table->foreignId('category_id');
+            $table->foreign('category_id') -> references('category_id')->on('categories');
             $table->timestamps();
             $table->softDeletes('deleted_at', 0);
         });

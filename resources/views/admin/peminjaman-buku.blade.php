@@ -27,18 +27,19 @@
                       </tr>
                       </thead>
                       <tbody>    
+                        @foreach($borrow as $data)
                       <tr role="row" class="odd">
-                        <td>1</td>
-                        <td>Indonesia</td>
-                        <td>Evi nopianti</td>
-                        <td>3</td>
-                        <td>2020-01-01</td>
-                        <td>2020-01-19</td>
+                        <td>{{$data->borrow_id}}</td>
+                        <td>{{$data->title_book}}</td>
+                        <td>{{$data->username}}</td>
+                        <td>{{$data->borrow_total_books}}</td>
+                        <td>{{$data->borrow_date}}</td>
+                        <td>{{$data->borrow_back_date}}</td>
                         <td></td>
                         <td><button type="submit" class="btn btn-3d btn-success mr-2">Bayar Denda</button>
                           <button type="submit" class="btn btn-3d btn-danger mr-2">Kembali</button></td>
                           
-                      
+                      @endforeach
                     </tbody>
                   </table>
                 </div>

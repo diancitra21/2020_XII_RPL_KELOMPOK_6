@@ -31,7 +31,9 @@
             <div class="row">
             
                   <table>
-                    
+                    <form action="{{route('detail_admin.update', Auth::user()->usr_id)}}" method="POST" >
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="_method" value="PUT">
                     <tr>
                       <th>
                      <div class="form-group form-animate-text" style="margin-top:40px !important;">
@@ -58,7 +60,8 @@
                       </tr><th>
                        <button type="submit" class="btn btn-3d btn-primary mr-2">Submit</button>
                    </th>
-                    
+                   {{crsf_field}}
+                    </form>
                   </table>
 
               </div>

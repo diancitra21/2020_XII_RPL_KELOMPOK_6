@@ -3,6 +3,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Users;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::get('/index',function() {
@@ -50,17 +51,14 @@ Route::get('edit-book/{book_id}' , 'BookController@edit');
 Route::post('update/{book_id}' , 'BookController@update');
 Route::get('delete/{book_id}' , 'BookController@delete');
 Route::get('/list-book', 'BookController@list_book');
+//peminjaman
+Route::get('Peminjaman-buku' , 'BorrowController@index');
+Route::get('peminjaman/{book_id}' , 'BorrowController@store');
 
 
 
 
-Route::get('list-buku' , 'User\UserController@ListBuku');
-Route::get('list-user' , 'User\UserController@ListUser');
 
-
-Route::get('list-buku-admin' , 'User\UserController@ListBukuAdmin');
-Route::get('Peminjaman-buku' , 'User\UserController@Peminjaman');
-Route::get('History' , 'User\UserController@History');
 Route::get('Peminjaman-buku-user' , 'User\UserController@PeminjamanUser');
 Route::get('History-user' , 'User\UserController@HistoryUser');
 
@@ -68,6 +66,9 @@ Route::get('My_Profile' , 'User\UserController@MyProfile');
 Route::get('Profile_user' , 'User\UserController@Profile_user');
 
 Route::get('detail_admin' , 'User\UserController@DetailAdmin');
+Route::get('detail_admin/{usr_id}' , 'User\UserController@edit');
+Route::post('update/{usr_id}' , 'User\UserController@update');
+
 Route::get('detail_users' , 'User\UserController@DetailUserAdmin');
 Route::get('detail_user' , 'User\UserController@DetailUser');
 

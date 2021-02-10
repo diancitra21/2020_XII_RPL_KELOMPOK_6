@@ -46,9 +46,12 @@
                       </div>
 
                       <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" name="kategori_buku" class="form-text mask-cep_with_callback" required="" value="{{$book->book_category}}">
-                        <span class="bar"></span>
-                        <label>kategori Buku</label>
+                        <h4>kategori Buku</h4>
+                        <select name="kategori_buku" class="form-control">
+                          @foreach($category as $data)
+                          <option value="{{ $data->category_id }}"> {{ $data->book_category }} </option>
+                          @endforeach
+                        </select>
                       </div>
 
                       <button type="submit" class="btn btn-3d btn-primary mr-2">Submit</button>

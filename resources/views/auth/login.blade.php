@@ -38,16 +38,14 @@
                   <img class="card-img-top img-fluid" src="asset/img/22.png" alt="Card image cap">
                   <p class="element-name"><h2>Perpustakaan</h2></p>
 
-                  <i class="icons icon-arrow-down"></i>
+                  
                   <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                    <input type="text" class="form-text" id="usr_email"  class="form-control @error('usr_email') is-invalid @enderror" name="usr_email" value="{{ old('usr_email') }}" autocomplete="email" autofocus required>
-                    <span class="bar"></span>
-                    <label>Username</label>
+                    <h4>Username :<input type="text" class="form-text" id="usr_email"  class="form-control @error('usr_email') is-invalid @enderror" name="usr_email" value="{{ old('usr_email') }}" autocomplete="email" autofocus required></h4>
                   </div>
                   <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                    <input id="password" type="password" class="form-text @error('password') is-invalid @enderror" name="password" autocomplete="current-password" required>
-                    <span class="bar"></span>
-                    <label>Password</label>
+                   <h4> Password : <input id="password" type="password" class="form-text @error('password') is-invalid @enderror" name="password" autocomplete="current-password" required></h4>
+                    
+                    
                   </div>
                   <label class="pull-left">
                   <input type="checkbox" class="icheck pull-left" name="checkbox1"/> Remember me
