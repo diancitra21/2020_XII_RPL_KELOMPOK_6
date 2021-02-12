@@ -40,7 +40,7 @@
 
                   
                   <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                    <h4>Username :<input type="text" class="form-text" id="usr_email"  class="form-control @error('usr_email') is-invalid @enderror" name="usr_email" value="{{ old('usr_email') }}" autocomplete="email" autofocus required></h4>
+                    <h4>E-Mail Address :<input type="text" class="form-text" id="usr_email"  class="form-control @error('usr_email') is-invalid @enderror" name="usr_email" value="{{ old('usr_email') }}" autocomplete="email" autofocus required></h4>
                   </div>
                   <div class="form-group form-animate-text" style="margin-top:40px !important;">
                    <h4> Password : <input id="password" type="password" class="form-text @error('password') is-invalid @enderror" name="password" autocomplete="current-password" required></h4>

@@ -26,37 +26,36 @@
     <div class="panel">
       <div class="panel-heading"><h3>My Profile</h3></div>
       <div class="panel-body">
-        <div class="responsive-table">
-          <div id="datatables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-            <div class="row">
-            
-                  <table>
-                     <form action="{{URL::to('/detail_admin/update',auth::user()->usr_id)}}" method="POST">
-                      @csrf
-                    <tr>
+        <form action="{{URL::to('/detail_admin/update',auth::user()->usr_id)}}" method="POST">
+         @csrf
+         <div class="form-group form-animate-text" style="margin-top:40px !important;"><h4> name</h4>
+          <input id="usr_name" type="text" class="form-text mask-time @error('usr_name') is-invalid @enderror" name="usr_name" value="{{ auth::user()->usr_name}}" autocomplete="usr_name" autofocus>
+            @error('usr_name')
+            <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+            </div>
+             <div class="form-group form-animate-text" style="margin-top:40px !important;">
+              <h4>E-Mail</h4>
+              <input id="usr_email" type="email" class="form-text mask-time @error('usr_email') is-invalid @enderror" name="usr_email" value="{{ auth::user()->usr_email}}" autocomplete="usr_email">
+              @error('usr_email')
+              <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+              </span>
+              @enderror
+              </div>
+              <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                <h4> No Phone</h4>
+                <input id="usr_phone" value="{{auth::user()->usr_phone }}" type="number" class="form-text mask-time @error('usr_phone') is-invalid @enderror" name="usr_phone" autocomplete="off">
+                 @error('usr_phone')
+                <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+                </div>
+                      
                       <th>
-                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" class="form-text mask-time" name="username" required="" value="{{auth::user()->usr_name}}">
-                        <span class="bar"></span>
-                        <label>Username</label>
-                      </div></th>
-                      </tr>
-                      <tr><th>
-                        <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" class="form-text mask-time" name="email" required="" value="{{auth::user()->usr_email}}">
-                        <span class="bar"></span>
-                        <label>Email</label>
-                      </div></th>
-
-                      </tr>
-                      <tr><th>
-                                              <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" class="form-text mask-time" name="phone" required="" value="{{auth::user()->usr_phone}}">
-                        <span class="bar"></span>
-                        <label>Phone</label>
-                      </div></th>
-
-                      </tr><th>
                        <button type="submit" class="btn btn-3d btn-primary mr-2">Submit</button>
                    </th>
                     </form>
