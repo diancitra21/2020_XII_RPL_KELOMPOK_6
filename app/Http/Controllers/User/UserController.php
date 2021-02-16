@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Users;
+use Validator;
 
 class UserController extends Controller
 {
@@ -66,11 +67,18 @@ class UserController extends Controller
     }
 
     public function update(Request $request, $usr_id) {
+       $this->validate($request, [
+        'usr_name' => ['required', 'string', 'max:255'],
+        'usr_email' => ['required', 'string', 'max:255', 'unique:users,usr_email'],
+        'usr_phone' => ['required', 'min:11', 'max:14'],
+        ]);
        $user = Users::find($usr_id);
-        $user->usr_name     = $request->username;
-        $user->usr_email    = $request->usr_email;
-        $user->usr_phone    = $request->usr_phone;
-        $user->update();
+        $user->usr_name        = $request->usr_name;
+        $user->usr_email       = $request->usr_email;
+        $user->usr_phone       = $request->usr_phone;
+        $user->save();
+
+        
         return redirect('/dashboard')->with('success', 'Data Berhasil Di Edit!');
     }
 
