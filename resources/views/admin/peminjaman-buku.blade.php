@@ -31,7 +31,7 @@
                       <tr role="row" class="odd">
                         <td>{{$data->borrow_id}}</td>
                         <td>{{$data->title_book}}</td>
-                        <td>{{$data->username}}</td>
+                        <td>{{$data->usr_name}}</td>
                         <td>{{$data->borrow_total_books}}</td>
                         <td>{{$data->borrow_date}}</td>
                         <td>{{$data->borrow_back_date}}</td>

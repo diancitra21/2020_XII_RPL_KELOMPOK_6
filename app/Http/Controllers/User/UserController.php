@@ -38,7 +38,10 @@ class UserController extends Controller
         return view ('admin.list-user');
     }
 
-
+public function DashboardUser()
+{
+    return view ('users.dashboard');
+}
 
     public function DashboardAdmin()
     {
@@ -67,19 +70,18 @@ class UserController extends Controller
     }
 
     public function update(Request $request, $usr_id) {
+        $user = Users::find($usr_id);
        $this->validate($request, [
         'usr_name' => ['required', 'string', 'max:255'],
-        'usr_email' => ['required', 'string', 'max:255', 'unique:users,usr_email'],
+        'usr_email' => ['required', 'string', 'max:255', 'unique:users,usr_email,'.$user->usr_id.',usr_id'],
         'usr_phone' => ['required', 'min:11', 'max:14'],
         ]);
-       $user = Users::find($usr_id);
+       
         $user->usr_name        = $request->usr_name;
         $user->usr_email       = $request->usr_email;
         $user->usr_phone       = $request->usr_phone;
-        $user->save();
-
-        
-        return redirect('/dashboard')->with('success', 'Data Berhasil Di Edit!');
+        $user->update();
+        return redirect('/dashboard')->with('success', 'Data Berhasil Diedit!');
     }
 
 

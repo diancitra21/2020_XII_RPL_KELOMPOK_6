@@ -112,17 +112,31 @@
                   </div>
                   <div class="modal-body">
                     <form>
-                      <div class="form-group">
-                        <label><b>Nama Peminjam :</b></label>
-                        <input type="text" name="" class="form-control">
-                      </div><br><br>
-                      <div class="form-group">
-                        <label><b>Jumlah Pinjam :</b></label>
-                        <input type="text" name="" class="form-control">
-                      </div><br><br>
+                      <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                        <h4>Buku</h4>
+                        <input type="text" class="form-text mask-date" name="judul_buku" readonly="" required="" value="{{$data->title_book}}">
+                        
+                      </div><br>
+                      <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                        <h4>Nama Peminjam</h4>
+                        <select name="namapeminjam" class="form-control">
+                          @foreach ($user as $dt)
+                          <option value="{{$dt->usr_name}}">{{$dt->usr_name}}</option>
+                          @endforeach
+                        </select>
+                      </div><br>
+                      <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                        <h4>Jumlah Pinjam</h4>
+                        <input type="number" class="form-text mask-date" name="jumlahbuku" required="" value="">
+                        <span class="bar"></span>
+                        
+
+                      </div>
+
+
                       <div class="modal-footer">
-                        <button type="submit" class="btn btn-3d btn-success">Pinjam</button>
-                        <button type="submit" class="btn btn-3d btn-danger mr-2">Kembali</button>
+                        <a href="Peminjaman-buku" class="btn btn-3d btn-success">Pinjam</a>
+                        
                       </div>
           
                             {{csrf_field()}}

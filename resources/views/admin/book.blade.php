@@ -28,7 +28,7 @@
                       <tbody>    
                         @foreach($book as $data)
                       <tr role="row" class="odd">
-                        <td>{{$data->book_id}}</td>
+                        <td>{{$data->++$row}}</td>
                         <td>{{$data ->title_book}}</td>
                         <td>{{$data ->tingkatan}}</td>
                         <td>{{$data ->book_publisher}} </td>

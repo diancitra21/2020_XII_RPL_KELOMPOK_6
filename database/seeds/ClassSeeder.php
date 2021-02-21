@@ -25,5 +25,9 @@ class ClassSeeder extends Seeder
             'class_id' 	=> '3',
             'tingkatan' => '12',
         ]);
+        DB::table('classes')->insert([
+            'class_id'  => '4',
+            'tingkatan' => '0',
+        ]);
     }
 }

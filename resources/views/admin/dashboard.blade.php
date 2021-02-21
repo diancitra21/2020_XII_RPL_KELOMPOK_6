@@ -37,7 +37,7 @@
     </div>
   </div> 
 </div>
-
+@include('sweetalert::alert')
 </div>
 </body>
 <!--

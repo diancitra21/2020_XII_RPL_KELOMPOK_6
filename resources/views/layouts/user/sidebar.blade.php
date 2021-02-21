@@ -8,22 +8,20 @@
                       <h1 class="animated fadeInLeft">19:52</h1>
                       <p class="animated fadeInRight">Saturday, November 7th 2020</p>
                     </li>
-                    
+                     <li class="active ripple"> 
+                    <a href="{{URL::to('dashboard')}}"><span class="fa fa-home"></span>Dashboard 
+                    </a>
                         <li class="active ripple">
-                      <a class="tree-toggle nav-header"><span class="fa fa-child"></span> Peminjaman Buku 
+                      <a class="tree-toggle nav-header"><span class="fa fa-child"></span> Buku 
                         <span class="fa-angle-right fa right-arrow text-right"></span>
                       </a>
                       <ul class="nav nav-list tree" style="display: none;">
-                          <li><a href="{{URL::to('/list-buku')}}">List Buku</a></li>
+                          <li><a href="{{URL::to('/list-buku')}}">Daftar Buku</a></li>
                       </ul>
                     </li>
 
                     
-                    <li class="ripple"><a class="tree-toggle nav-header">
-                    <span class="fa fa-history"></span> History  <span class="fa-angle-right fa right-arrow text-right"></span> </a>
-                      <ul class="nav nav-list tree" style="display: none;">
-                        <li><a href="{{URL::to('/History-user')}}">Peminjaman</a></li>
-                        
+                    
                 </div>
             </div>
           <!-- end: Left Menu -->

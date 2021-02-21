@@ -38,8 +38,7 @@
             </div>
              <div class="form-group form-animate-text" style="margin-top:40px !important;">
               <h4>E-Mail</h4>
-              <input id="usr_email" type="email" class="form-text mask-time @error('usr_email') is-invalid @enderror" name="usr_email" value="{{ auth::user()->usr_email}}" autocomplete="usr_email">
-              @error('usr_email')
+              <input id="usr_email" type="email" class="form-text mask-time @error('usr_email') is-invalid @enderror" name="usr_email" value="{{ auth::user()->usr_email}}" autocomplete="usr_email" >           @error('usr_email')
               <span class="invalid-feedback" role="alert">
               <strong>{{ $message }}</strong>
               </span>
@@ -57,7 +56,10 @@
                       
                       <th>
                        <button type="submit" class="btn btn-3d btn-primary mr-2">Submit</button>
+                        <a href="dashboard" class="btn btn-3d btn-danger mr-2">Kembali</a>
+
                    </th>
+                   @include('sweetalert::alert')
                     </form>
                   </table>
 

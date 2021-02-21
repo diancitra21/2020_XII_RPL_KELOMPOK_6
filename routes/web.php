@@ -17,7 +17,8 @@ use App\Users;
 
 Route::get('/', function () {
     return view('auth.login');
-});
+})->middleware('guest');
+
 
 Route::get('/index',function() {
 	return view('index');
@@ -40,10 +41,13 @@ Route::get('/register-teacher', 'Auth\RegisterController@registerTeacher');
 Route::get('/register-staff', 'Auth\RegisterController@registerStaff');
 
 //Route Untuk Admin, Student, Teacher, Staff TU, jika register dan login maka akan ke halaman ini 
-Route::group(['middleware' => ['auth', 'verified']], function () {
-    Route::get('/dashboard', 'BookController@list_book')->name('dashboard.users');
+Route::group(['middleware' => 'revalidate'], function () {
+    Route::get('/dashboard', 'User\UserController@index')->name('dashboard.users');
 });
 Route::get('/dashboard', 'User\UserController@DashboardAdmin')->name('dashboard.admin');
+//Route::get('/dashboard', 'User\UserController@DashboardUser')->name('dashboard.users');
+//admin
+//buku
 Route::get('book' , 'BookController@index');
 Route::get('tambah_buku' , 'BookController@add_book');
 Route::post('book' , 'BookController@save');
@@ -51,9 +55,11 @@ Route::get('edit-book/{book_id}' , 'BookController@edit');
 Route::post('update/{book_id}' , 'BookController@update');
 Route::get('delete/{book_id}' , 'BookController@delete');
 Route::get('/list-book', 'BookController@list_book');
+
 //peminjaman
 Route::get('Peminjaman-buku' , 'BorrowController@index');
 Route::get('peminjaman/{book_id}' , 'BorrowController@store');
+
 
 
 

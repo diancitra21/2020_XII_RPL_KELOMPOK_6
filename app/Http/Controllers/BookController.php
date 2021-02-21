@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Books;
 use App\Classes;
 use App\Categories;
+use App\Users;
+
 
 
 
@@ -13,6 +15,7 @@ class BookController extends Controller
 {
     public function index()
     {
+        $row = 0;
         $book  = Books::join('classes', 'books.class_id', '=', 'classes.class_id')->join('categories', 'books.category_id', '=', 'categories.category_id')->select('books.*', 'classes.*', 'categories.*')->get();
         return view ('admin.book',['book' => $book]);
 
@@ -66,19 +69,12 @@ class BookController extends Controller
 
     public function list_book()
     {
+        
+        $user = Users::all();
          $book  = Books::join('classes', 'books.class_id', '=', 'classes.class_id')->join('categories', 'books.category_id', '=', 'categories.category_id')->select('books.*', 'classes.*', 'categories.*')->get();
-        return view('admin.list-book', ['book' => $book]);
+        return view('admin.list-book', ['book' => $book,'user' => $user]);
     }
 
-    public function pinjam($book_id)
-    {
-        \DB::table('borrows')->insert([
-            'book_id' => $book_id,
-            'username' => $username,
-            'borrows_total_book' => $borrows_total_book,
-            'created_at' => date('Y-m-d M:i:s'),
-        ]);
-        return view('admin.peminjaman-buku');
-    }
+    
 
 }
