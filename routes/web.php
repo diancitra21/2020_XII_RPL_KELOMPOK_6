@@ -55,6 +55,8 @@ Route::get('edit-book/{book_id}' , 'BookController@edit');
 Route::post('update/{book_id}' , 'BookController@update');
 Route::get('delete/{book_id}' , 'BookController@delete');
 Route::get('/list-book', 'BookController@list_book');
+Route::get('/pinjam_buku/{book_id}', 'BorrowController@pinjamBuku');
+Route::post('/Peminjaman-buku' , 'BorrowController@saveBorrow');
 
 //peminjaman
 Route::get('Peminjaman-buku' , 'BorrowController@index');

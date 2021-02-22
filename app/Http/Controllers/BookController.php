@@ -70,11 +70,10 @@ class BookController extends Controller
     public function list_book()
     {
         
-        $user = Users::all();
          $book  = Books::join('classes', 'books.class_id', '=', 'classes.class_id')->join('categories', 'books.category_id', '=', 'categories.category_id')->select('books.*', 'classes.*', 'categories.*')->get();
-        return view('admin.list-book', ['book' => $book,'user' => $user]);
+        return view('admin.list-book', ['book' => $book]);
     }
 
-    
-
+   
+   
 }

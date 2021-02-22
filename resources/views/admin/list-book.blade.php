@@ -99,46 +99,7 @@
                         <td>{{$data ->book_total}} </td>                        
                         <td>{{$data ->book_category}} </td>
                         <td>
-                          <button type="button" class=" btn btn-outline btn-primary" data-toggle="modal" data-target="#modalPinjam">Pinjam Buku</button>
-                           <div class="modal fade" id="modalPinjam" role="dialog" arialabelledby="modalLabel" aria-hidden="true">
-            <div class="modal-dialog" role ="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aris-hidden="true">&times;</span>
-                    </button>
-                  <h2 class="modal-title"><center>PEMINJAMAN</center></h2>
-                    
-                  </div>
-                  <div class="modal-body">
-                    <form>
-                      <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <h4>Buku</h4>
-                        <input type="text" class="form-text mask-date" name="judul_buku" readonly="" required="" value="{{$data->title_book}}">
-                        
-                      </div><br>
-                      <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <h4>Nama Peminjam</h4>
-                        <select name="namapeminjam" class="form-control">
-                          @foreach ($user as $dt)
-                          <option value="{{$dt->usr_name}}">{{$dt->usr_name}}</option>
-                          @endforeach
-                        </select>
-                      </div><br>
-                      <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <h4>Jumlah Pinjam</h4>
-                        <input type="number" class="form-text mask-date" name="jumlahbuku" required="" value="">
-                        <span class="bar"></span>
-                        
-
-                      </div>
-
-
-                      <div class="modal-footer">
-                        <a href="Peminjaman-buku" class="btn btn-3d btn-success">Pinjam</a>
-                        
-                      </div>
-          
+                          <a href = "{{URL::to('/pinjam_buku/'.$data->book_id)}}" class="btn btn-3d btn-danger mr-2">Pinjam Buku</a><br><br><br>
                             {{csrf_field()}}
                           
                         

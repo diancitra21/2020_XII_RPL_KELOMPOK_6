@@ -21,7 +21,7 @@ class BorrowsTable extends Migration
             $table->foreign('usr_id') -> references('usr_id')->on('users');
             $table->biginteger('borrow_total_books');
             $table->date('borrow_date');
-            $table->date('borrow_back_date');
+            $table->date('borrow_back_date')->nullable;
             $table->string('borrow_fine');
             $table->timestamps();
         });

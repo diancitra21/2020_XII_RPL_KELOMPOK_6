@@ -1,5 +1,9 @@
+<head>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
 
-
+ 
 <!-- start: Javascript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -25,7 +29,13 @@
 </script>
 
 
-
+<script>
+  $( function() {
+    $( "#date" ).datepicker({
+      dateFormat: "yy-mm-dd"
+    });
+  } );
+  </script>
     <script src="asset/js/jquery.min.js"></script>
     <script src="asset/js/jquery.ui.min.js"></script>
     <script src="asset/js/bootstrap.min.js"></script>
