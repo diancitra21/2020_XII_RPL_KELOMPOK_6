@@ -22,6 +22,8 @@
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 51px;">Jumlah Pinjam</th>
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Tanggal Pinjam</th>
                         <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Tanggal Kembali</th>
+                        <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Status</th>
+                        
                         <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Denda</th>
                         <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Action</th>
                       </tr>
@@ -29,18 +31,27 @@
                       <tbody>    
                         @foreach($borrow as $data)
                       <tr role="row" class="odd">
-                        <td>{{$data->borrow_id}}</td>
+                        <td>{{$row++}}</td>
                         <td>{{$data->title_book}}</td>
                         <td>{{$data->usr_name}}</td>
                         <td>{{$data->borrow_total_books}}</td>
                         <td>{{$data->borrow_date}}</td>
                         <td>{{$data->borrow_back_date}}</td>
+                        <td>@if($data->status == 'pinjam')
+                          <label class="badge badge-warning">Pinjam</label>
+                        @else
+                        <label class="badge badge-success">Kembali</label>
+                        @endif
+                        </td>
                         <td></td>
-                        <td><button type="submit" class="btn btn-3d btn-success mr-2">Bayar Denda</button>
-                          <button type="submit" class="btn btn-3d btn-danger mr-2">Kembali</button></td>
-                          
+                        <td>
+                          <button type="submit" class="btn btn-3d btn-success mr-2"> Denda</button><button type="submit" class="btn btn-3d btn-danger mr-2">Kembali</button>
+                        </td>
+                          @include('sweetalert::alert')
                       @endforeach
                     </tbody>
+                  </tr>
+
                   </table>
                 </div>
               </div>

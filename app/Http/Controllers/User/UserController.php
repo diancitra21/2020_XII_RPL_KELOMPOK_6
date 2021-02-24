@@ -35,7 +35,8 @@ class UserController extends Controller
 
     public function ListUser()
     {
-        return view ('admin.list-user');
+        $user = Users::all();
+        return view ('admin.list-user', ['user' => $user]);
     }
 
 public function DashboardUser()

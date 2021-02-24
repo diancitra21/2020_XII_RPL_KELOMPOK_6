@@ -91,7 +91,7 @@
                       <tbody>    
                         @foreach($book as $data)
                       <tr role="row" class="odd">
-                        <td>{{$data->book_id}}</td>
+                        <td>{{$row++}}</td>
                         <td>{{$data ->title_book}}</td>
                         <td>{{$data ->tingkatan}}</td>
                         <td>{{$data ->book_publisher}} </td>
@@ -99,7 +99,7 @@
                         <td>{{$data ->book_total}} </td>                        
                         <td>{{$data ->book_category}} </td>
                         <td>
-                          <a href = "{{URL::to('/pinjam_buku/'.$data->book_id)}}" class="btn btn-3d btn-danger mr-2">Pinjam Buku</a><br><br><br>
+                          <a href = "{{URL::to('/pinjam_buku/'.$data->book_id)}}" class="btn btn-3d bg-info mr-2">Pinjam Buku</a><br><br><br>
                             {{csrf_field()}}
                           
                         
@@ -113,7 +113,7 @@
                       </tr>
 
                       @endforeach
-                      @include('sweetalert::alert')
+                      
 
                       <tr role="row" class="odd">
                          

@@ -20,13 +20,16 @@
                       </tr>
                       </thead>
                       <tbody>    
+                        @foreach ($user as $data)
                       <tr role="row" class="odd">
-                        <td>1</td>
-                        <td>Evi nopianti</td>
-                        <td>nopiantievi29@gmail.com</td>
-                        <td>08976643345</td>
+                        <td>{{$data -> usr_id}}</td>
+                        <td>{{$data -> usr_name}}</td>
+                        <td>{{$data -> usr_email}}</td>
+                        <td>{{$data -> usr_phone}}</td>
 
                       </tr>
+
+                      @endforeach
                       <tr role="row" class="odd">
                          
                       </tr>

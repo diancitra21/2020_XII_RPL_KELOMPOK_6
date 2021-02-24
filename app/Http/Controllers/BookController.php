@@ -15,9 +15,9 @@ class BookController extends Controller
 {
     public function index()
     {
-        $row = 0;
+        $row = 1;
         $book  = Books::join('classes', 'books.class_id', '=', 'classes.class_id')->join('categories', 'books.category_id', '=', 'categories.category_id')->select('books.*', 'classes.*', 'categories.*')->get();
-        return view ('admin.book',['book' => $book]);
+        return view ('admin.book',['book' => $book, 'row' => $row]);
 
         
     }
@@ -69,9 +69,9 @@ class BookController extends Controller
 
     public function list_book()
     {
-        
+        $row = 1;
          $book  = Books::join('classes', 'books.class_id', '=', 'classes.class_id')->join('categories', 'books.category_id', '=', 'categories.category_id')->select('books.*', 'classes.*', 'categories.*')->get();
-        return view('admin.list-book', ['book' => $book]);
+        return view('admin.list-book', ['book' => $book, 'row'=>$row]);
     }
 
    
