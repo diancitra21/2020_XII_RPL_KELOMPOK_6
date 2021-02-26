@@ -25,14 +25,49 @@ class BorrowController extends Controller
         return view('admin.pinjam_buku', ['user' => $user, 'book' => $book]);
     }
 
-     public function saveBorrow(Request $request){ 
-        $borrow = new Borrows;
-        $borrow->book_id     		 	= $request->judul_buku;
-        $borrow->usr_id         	 	= $request->namapeminjam;
-        $borrow->borrow_total_books		= $request->jumlahpinjam;
-        $borrow->borrow_date			= $request->tgl_pinjam;
-        $borrow->borrow_back_date			= $request->tgl_kembali;
+     public function saveBorrow(Request $request, $book_id){ 
+        $book = Books::whereBookId($book_id)->first();
+        $stock = $book->book_total;
+
+        $tot_borrow = $request->input('borrow_total_books');
+
+$book->book_total = $stock - $request->jumlahpinjam;
+            $book->update();
+
+        if ($stock == 0) {
+            \Session::flash('gagal', 'Stok Sudah Habis');
+            return redirect('/Peminjaman-buku');
+        } elseif ($stock > $tot_borrow or $stock == $tot_borrow) {
+
+             $borrow = new Borrows;
+        $borrow->book_id                = $request->judul_buku;
+        $borrow->usr_id                 = $request->namapeminjam;
+        $borrow->borrow_total_books     = $request->jumlahpinjam;
+        $borrow->borrow_date            = $request->tgl_pinjam;
+        $borrow->borrow_back_date       = $request->tgl_kembali;
+        $borrow->status                 = $request->status;
         $borrow->save();
-        return redirect('/Peminjaman-buku')->with('success', 'Buku Berhasil Dipinjam!');
+       
+            // $item->stock_item -= $tot_borrow;
+            $book->save();
+            
+ return redirect('/Peminjaman-buku')->with('success', 'Buku Berhasil Dipinjam!');
+        } else {
+            \Session::flash('gagal', 'Jumlah Pinjam Lebih Dari Stok');
+            return redirect('/Peminjaman-buku');
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+       
    }
 }

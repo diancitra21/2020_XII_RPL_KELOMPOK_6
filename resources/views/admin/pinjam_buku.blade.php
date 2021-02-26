@@ -9,8 +9,8 @@
                   <div class="col-md-12 panel-body">
                     <div class="col-md-12">
                      <div class="col-md-12">
-                      <form action="{{URL::to('/Peminjaman-buku')}}" method="POST">
-                      
+                      <form action="{{URL::to('/Peminjaman-buku/'.$book->book_id)}}" method="POST">
+                      @csrf
                      
                       <div class="form-group form-animate-text" style="margin-top:40px !important;">
                         <h4>Judul Buku</h4>

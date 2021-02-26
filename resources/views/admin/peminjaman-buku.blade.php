@@ -39,9 +39,9 @@
                         <td>{{$data->borrow_back_date}}</td>
                         <td>@if($data->status == 'pinjam')
                           <label class="badge badge-warning">Pinjam</label>
-                        @else
-                        <label class="badge badge-success">Kembali</label>
-                        @endif
+                          @else
+                          <label class="badge badge-success">Pinjam</label>
+                          @endif
                         </td>
                         <td></td>
                         <td>

@@ -1,4 +1,3 @@
-
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -43,8 +42,9 @@ Route::get('/register-staff', 'Auth\RegisterController@registerStaff');
 //Route Untuk Admin, Student, Teacher, Staff TU, jika register dan login maka akan ke halaman ini 
 Route::group(['middleware' => 'revalidate'], function () {
     Route::get('/dashboard', 'User\UserController@index')->name('dashboard.users');
-});
 Route::get('/dashboard', 'User\UserController@DashboardAdmin')->name('dashboard.admin');
+});
+
 //Route::get('/dashboard', 'User\UserController@DashboardUser')->name('dashboard.users');
 //admin
 //buku
@@ -56,7 +56,7 @@ Route::post('update/{book_id}' , 'BookController@update');
 Route::get('delete/{book_id}' , 'BookController@delete');
 Route::get('/list-book', 'BookController@list_book');
 Route::get('/pinjam_buku/{book_id}', 'BorrowController@pinjamBuku');
-Route::post('/Peminjaman-buku' , 'BorrowController@saveBorrow');
+Route::post('/Peminjaman-buku/{book_id}' , 'BorrowController@saveBorrow');
 
 //peminjaman
 Route::get('Peminjaman-buku' , 'BorrowController@index');
