@@ -37,12 +37,7 @@
                         <td>{{$data->borrow_total_books}}</td>
                         <td>{{$data->borrow_date}}</td>
                         <td>{{$data->borrow_back_date}}</td>
-                        <td>@if($data->status == 'pinjam')
-                          <label class="badge badge-warning">Pinjam</label>
-                          @else
-                          <label class="badge badge-success">Pinjam</label>
-                          @endif
-                        </td>
+                        <td></td>
                         <td></td>
                         <td>
                           <button type="submit" class="btn btn-3d btn-success mr-2"> Denda</button><button type="submit" class="btn btn-3d btn-danger mr-2">Kembali</button>

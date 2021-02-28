@@ -25,38 +25,15 @@ class UserController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     
-    public function index(){
-       return view('users.dashboard');
-    }
-    public function ListBuku()
+    public function index()
     {
-        return view ('users.list-buku');
+        return view ('admin.dashboard');
     }
 
     public function ListUser()
     {
         $user = Users::all();
         return view ('admin.list-user', ['user' => $user]);
-    }
-
-public function DashboardUser()
-{
-    return view ('users.dashboard');
-}
-
-    public function DashboardAdmin()
-    {
-        return view ('admin.dashboard');
-    }
-
-    public function PeminjamanUser()
-    {
-        return view ('users.peminjaman-buku-user');
-    }
-
-    public function HistoryUser()
-    {
-        return view ('users.history-user');
     }
 
     public function DetailAdmin()
@@ -86,16 +63,8 @@ public function DashboardUser()
     }
 
 
-    public function DetailUserAdmin()
-    {
-        return view ('admin.detail_users');
-    }
-
-    public function DetailUser()
-
-    {
-        return view ('users.detail_user');
-    }
+    
+   
 
     public function admin()
     {

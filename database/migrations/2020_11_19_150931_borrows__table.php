@@ -22,7 +22,7 @@ class BorrowsTable extends Migration
             $table->biginteger('borrow_total_books');
             $table->date('borrow_date');
             $table->date('borrow_back_date')->nullable();
-            $table->bigInteger('status')->nullable();
+            $table->tinyInteger('status')->nullable();
             $table->string('borrow_fine')->nullable();
             $table->timestamps();
         });

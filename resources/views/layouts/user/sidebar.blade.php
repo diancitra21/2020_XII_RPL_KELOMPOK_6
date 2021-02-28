@@ -9,7 +9,7 @@
                       <p class="animated fadeInRight">Saturday, November 7th 2020</p>
                     </li>
                      <li class="active ripple"> 
-                    <a href="{{URL::to('dashboard')}}"><span class="fa fa-home"></span>Dashboard 
+                    <a href="{{URL::to('home')}}"><span class="fa fa-home"></span>Dashboard 
                     </a>
                         <li class="active ripple">
                       <a class="tree-toggle nav-header"><span class="fa fa-child"></span> Buku 

@@ -85,45 +85,21 @@
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 51px;">Jumlah Halaman</th>
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Stok Buku</th>
                         <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Kategori Buku</th>
-                        <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Action</th>
+                        
                       </tr>
                       </thead>
                       <tbody>    
                         @foreach($book as $data)
                       <tr role="row" class="odd">
-                        <td>{{$data->book_id}}</td>
+                        <td>{{$row++}}</td>
                         <td>{{$data ->title_book}}</td>
                         <td>{{$data ->tingkatan}}</td>
                         <td>{{$data ->book_publisher}} </td>
                         <td>{{$data ->book_page_total}} </td>
                         <td>{{$data ->book_total}} </td>                        
                         <td>{{$data ->book_category}} </td>
-                        <td>
-                          <button type="button" class=" btn btn-outline btn-primary" data-toggle="modal" data-target="#modalPinjam">Pinjam Buku</button>
-                           <div class="modal fade" id="modalPinjam" role="dialog" arialabelledby="modalLabel" aria-hidden="true">
-            <div class="modal-dialog" role ="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aris-hidden="true">&times;</span>
-                    </button>
-                  <h2 class="modal-title"><center>PEMINJAMAN</center></h2>
-                    
-                  </div>
-                  <div class="modal-body">
-                    <form>
-                      <div class="form-group">
-                        <label><b>Nama Peminjam :</b></label>
-                        <input type="text" name="" class="form-control">
-                      </div><br><br>
-                      <div class="form-group">
-                        <label><b>Jumlah Pinjam :</b></label>
-                        <input type="text" name="" class="form-control">
-                      </div><br><br>
-                      <div class="modal-footer">
-                        <button type="submit" class="btn btn-3d btn-success">Pinjam</button>
-                        <button type="submit" class="btn btn-3d btn-danger mr-2">Kembali</button>
-                      </div>
+                        
+                          
           
                             {{csrf_field()}}
                           
@@ -134,7 +110,7 @@
                       
                         
                               
-                          </td>
+                        
                       </tr>
 
                       @endforeach

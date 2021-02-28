@@ -41,8 +41,8 @@ Route::get('/register-staff', 'Auth\RegisterController@registerStaff');
 
 //Route Untuk Admin, Student, Teacher, Staff TU, jika register dan login maka akan ke halaman ini 
 Route::group(['middleware' => 'revalidate'], function () {
-    Route::get('/dashboard', 'User\UserController@index')->name('dashboard.users');
-Route::get('/dashboard', 'User\UserController@DashboardAdmin')->name('dashboard.admin');
+    Route::get('/home', 'UsersController@index')->name('dashboard.users');
+    Route::get('/dashboard', 'User\UserController@index')->name('dashboard.admin');
 });
 
 //Route::get('/dashboard', 'User\UserController@DashboardUser')->name('dashboard.users');
@@ -78,8 +78,11 @@ Route::get('detail_admin/{usr_id}' , 'User\UserController@edit');
 Route::post('detail_admin/update/{usr_id}' , 'User\UserController@update');
 
 Route::get('detail_users' , 'User\UserController@DetailUserAdmin');
-Route::get('detail_user' , 'User\UserController@DetailUser');
+Route::get('detail_user' , 'UsersController@DetailUser');
 Route::get('list-user' , 'User\UserController@ListUser');
+Route::get('list-buku' , 'UsersController@ListBuku');
+Route::get('detail_user/{usr_id}' , 'UsersController@edit');
+Route::post('detail_user/update/{usr_id}' , 'UsersController@update');
 
 
 

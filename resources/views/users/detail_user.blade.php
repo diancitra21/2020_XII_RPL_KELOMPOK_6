@@ -26,7 +26,7 @@
     <div class="panel">
       <div class="panel-heading"><h3>My Profile</h3></div>
       <div class="panel-body">
-        <form action="{{URL::to('/detail_admin/update',auth::user()->usr_id)}}" method="POST">
+        <form action="{{URL::to('/detail_user/update',auth::user()->usr_id)}}" method="POST">
          @csrf
          <div class="form-group form-animate-text" style="margin-top:40px !important;"><h4> name</h4>
           <input id="usr_name" type="text" class="form-text mask-time @error('usr_name') is-invalid @enderror" name="usr_name" value="{{ auth::user()->usr_name}}" autocomplete="usr_name" autofocus>
@@ -56,7 +56,7 @@
                       
                       <th>
                        <button type="submit" class="btn btn-3d btn-primary mr-2">Submit</button>
-                        <a href="dashboard" class="btn btn-3d btn-danger mr-2">Kembali</a>
+                        <a href="home" class="btn btn-3d btn-danger mr-2">Kembali</a>
 
                    </th>
                    @include('sweetalert::alert')

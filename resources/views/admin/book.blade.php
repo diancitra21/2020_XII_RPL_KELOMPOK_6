@@ -33,7 +33,13 @@
                         <td>{{$data ->tingkatan}}</td>
                         <td>{{$data ->book_publisher}} </td>
                         <td>{{$data ->book_page_total}} </td>
-                        <td>{{$data ->book_total}} </td>                        
+                        <td>
+                          @if ($data->book_total <= 0)
+                                            Stock Habis
+                                        @else 
+                                            {{ $data->book_total }}
+                                        @endif
+                        </td>                         
                         <td>{{$data ->book_category}} </td>
                         <td>
                           

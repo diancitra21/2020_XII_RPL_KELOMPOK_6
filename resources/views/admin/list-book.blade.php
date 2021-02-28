@@ -88,7 +88,8 @@
                         <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Action</th>
                       </tr>
                       </thead>
-                      <tbody>    
+                       
+                       <tbody>    
                         @foreach($book as $data)
                       <tr role="row" class="odd">
                         <td>{{$row++}}</td>
@@ -96,13 +97,20 @@
                         <td>{{$data ->tingkatan}}</td>
                         <td>{{$data ->book_publisher}} </td>
                         <td>{{$data ->book_page_total}} </td>
-                        <td>{{$data ->book_total}} </td>                        
+                        <!--<td>{{$data ->book_total}} </td>   -->
+                        <td>
+                          @if ($data->book_total <= 0)
+                                            Stock Habis
+                                        @else 
+                                            {{ $data->book_total }}
+                                        @endif
+                        </td>                     
                         <td>{{$data ->book_category}} </td>
                         <td>
                           <a href = "{{URL::to('/pinjam_buku/'.$data->book_id)}}" class="btn btn-3d bg-info mr-2">Pinjam Buku</a><br><br><br>
                             {{csrf_field()}}
                           
-                        
+                        @include('sweetalert::alert')
                         
                                   <!--<a href="{{URL::to('delete/'.$data->book_id)}}">
                         <button type="submit" name="submit" class="btn btn-3d btn-danger mr">delete</button>-->
