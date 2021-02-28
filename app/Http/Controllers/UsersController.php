@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Borrows;
 use Illuminate\Http\Request;
 use App\Books;
 use App\Users;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -39,12 +41,24 @@ class UsersController extends Controller
         'usr_email' => ['required', 'string', 'max:255', 'unique:users,usr_email,'.$user->usr_id.',usr_id'],
         'usr_phone' => ['required', 'min:11', 'max:14'],
         ]);
-       
+
         $user->usr_name        = $request->usr_name;
         $user->usr_email       = $request->usr_email;
         $user->usr_phone       = $request->usr_phone;
         $user->update();
         return redirect('/home')->with('success', 'Data Berhasil Diedit!');
+    }
+
+    public function peminjaman (){
+        $data ['borrow']  = Borrows::join('books', 'borrows.book_id', '=', 'books.book_id')
+            ->join('users', 'borrows.usr_id', '=', 'users.usr_id')
+            ->where('borrows.usr_id'  , Auth::user()->usr_id)
+            ->select(
+                'borrows.*', 'books.*', 'users.*',
+            )
+            ->orderBy('borrows.borrow_id',  'DESC')
+            ->get();
+        return view ('users.peminjaman-buku-user', $data);
     }
 
 }

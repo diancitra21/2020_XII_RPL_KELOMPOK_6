@@ -22,7 +22,7 @@ class BorrowsTable extends Migration
             $table->biginteger('borrow_total_books');
             $table->date('borrow_date');
             $table->date('borrow_back_date')->nullable();
-            $table->tinyInteger('status')->nullable();
+            $table->Integer('status')->default(0);
             $table->string('borrow_fine')->nullable();
             $table->timestamps();
         });
@@ -35,7 +35,7 @@ class BorrowsTable extends Migration
      */
     public function down()
     {
-        
+
          Schema::dropIfExists('borrows');
 
     }

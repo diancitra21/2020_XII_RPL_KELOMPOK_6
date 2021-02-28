@@ -8,11 +8,11 @@
   <div class="panel-heading bg-white border-none">
     <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
       <div class="card">
-        <div class="card-body"> 
-      <h4 class="text-left"> </h4> 
+        <div class="card-body">
+      <h4 class="text-left"> </h4>
       <img class="card-img-top img-fluid" src="asset/img/20.jpg" alt="Card image cap">
       <h3>{{$data->title_book}}</h3>
-      <h3>kelas {{$data->tingkatan}}</h3> 
+      <h3>kelas {{$data->tingkatan}}</h3>
           <button type="button" class=" btn btn-outline btn-primary" data-toggle="modal" data-target="#modalPinjam">Pinjam Buku</button>
           <div class="modal fade" id="modalPinjam" role="dialog" arialabelledby="modalLabel" aria-hidden="true">
             <div class="modal-dialog" role ="document">
@@ -22,7 +22,7 @@
                       <span aris-hidden="true">&times;</span>
                     </button>
                   <h2 class="modal-title"><center>PEMINJAMAN</center></h2>
-                    
+
                   </div>
                   <div class="modal-body">
                     <form>
@@ -42,24 +42,24 @@
                         <button type="submit" class="btn btn-success">Pinjam</button>
                         <button type="submit" class="btn btn-danger">Kembali</button>
                       </div>
-                    
+
                     </form>
                   </div>
                 </div>
               </div>
-              
+
             </div>
-            
+
           </div>
       </div>
     </div>
       </div>
-      
+
       <div class="col-md-6 col-sm-6 col-xs-6 text-right">
     </div>
-  
+
   <div class="panel-body text-center">
-    
+
   </div>
 </div>
 </div>
@@ -83,13 +83,15 @@
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 60px;">Kelas</th>
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 60px;">Penerbit</th>
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 51px;">Jumlah Halaman</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Jumlah Buku</th>
+
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Stok Buku</th>
                         <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Kategori Buku</th>
                         <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Action</th>
                       </tr>
                       </thead>
-                       
-                       <tbody>    
+
+                       <tbody>
                         @foreach($book as $data)
                       <tr role="row" class="odd">
                         <td>{{$row++}}</td>
@@ -97,37 +99,37 @@
                         <td>{{$data ->tingkatan}}</td>
                         <td>{{$data ->book_publisher}} </td>
                         <td>{{$data ->book_page_total}} </td>
-                        <!--<td>{{$data ->book_total}} </td>   -->
+                        <td>{{$data ->book_total}} </td>
                         <td>
-                          @if ($data->book_total <= 0)
-                                            Stock Habis
-                                        @else 
-                                            {{ $data->book_total }}
-                                        @endif
-                        </td>                     
+                            @if ($data->book_stok == 0)
+                                Stok Habis
+                            @else
+                                {{ $data->book_stok }}
+                            @endif
+                        </td>
                         <td>{{$data ->book_category}} </td>
                         <td>
                           <a href = "{{URL::to('/pinjam_buku/'.$data->book_id)}}" class="btn btn-3d bg-info mr-2">Pinjam Buku</a><br><br><br>
                             {{csrf_field()}}
-                          
+
                         @include('sweetalert::alert')
-                        
+
                                   <!--<a href="{{URL::to('delete/'.$data->book_id)}}">
                         <button type="submit" name="submit" class="btn btn-3d btn-danger mr">delete</button>-->
-                      
-                        
-                              
+
+
+
                           </td>
                       </tr>
 
                       @endforeach
-                      
+
 
                       <tr role="row" class="odd">
-                         
+
                       </tr>
                       <tr role="row" class="odd">
-                         
+
                       </tr>
                       <tr role="row" class="odd">
 
