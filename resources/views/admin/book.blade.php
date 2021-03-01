@@ -20,6 +20,7 @@
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 60px;">Kelas</th>
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 60px;">Penerbit</th>
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 51px;">Jumlah Halaman</th>
+                          <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Jumlah Buku</th>
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Stok Buku</th>
                         <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Kategori Buku</th>
                         <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Action</th>
@@ -33,14 +34,18 @@
                         <td>{{$data ->tingkatan}}</td>
                         <td>{{$data ->book_publisher}} </td>
                         <td>{{$data ->book_page_total}} </td>
+                        <td>{{$data ->book_total}} </td>
                         <td>
-                          @if ($data->book_total <= 0)
-                                            Stock Habis
-                                        @else 
-                                            {{ $data->book_total }}
-                                        @endif
-                        </td>                         
+                            @if ($data->book_stok == 0)
+                                Stok Habis
+                            @else
+                                {{ $data->book_stok }}
+                            @endif
+                        </td>
                         <td>{{$data ->book_category}} </td>
+                        
+                                             
+                        
                         <td>
                           
                           <a href = "{{URL::to('edit-book/'.$data->book_id)}}" class="btn btn-3d btn-primary mr-2">Edit</a>

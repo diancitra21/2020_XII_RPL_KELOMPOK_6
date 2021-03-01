@@ -45,6 +45,7 @@
                         <label>Jumlah Buku</label>
                       </div>
 
+
                       <div class="form-group form-animate-text" style="margin-top:40px !important;">
                         <h4>kategori Buku</h4>
                         <select name="kategori_buku" class="form-control">

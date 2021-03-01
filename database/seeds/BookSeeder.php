@@ -17,24 +17,27 @@ class BookSeeder extends Seeder
             'book_publisher'     => 'Buku Kita',
             'book_page_total'       => 300,
             'book_total'            => 70,
+            'book_stok'           => 70,
             'category_id'         => 1,
         ]);
 
          DB::table('books')->insert([
-            'title_book'            => 'indonesia',
+            'title_book'            => 'Indonesia',
             'class_id'                 => 2,
             'book_publisher'     => 'airlangga',
             'book_page_total'       => 300,
             'book_total'            => 70,
+            'book_stok'           => 70,
             'category_id'         => 1,
         ]);
 
          DB::table('books')->insert([
-            'title_book'            => 'indonesia',
+            'title_book'            => 'Indonesia',
             'class_id'                 => 3,
             'book_publisher'     => 'airlangga',
             'book_page_total'       => 300,
             'book_total'            => 70,
+            'book_stok'           => 70,
             'category_id'         => 1,
         ]);
 
@@ -44,6 +47,7 @@ class BookSeeder extends Seeder
             'book_publisher'     => 'airlangga',
             'book_page_total'       => 355,
             'book_total'            => 70,
+    'book_stok'           => 70,
             'category_id'         => 1,
         ]);
          DB::table('books')->insert([
@@ -52,6 +56,7 @@ class BookSeeder extends Seeder
             'book_publisher'     => 'airlangga',
             'book_page_total'       => 355,
             'book_total'            => 70,
+            'book_stok'           => 70,
             'category_id'         => 1,
         ]);
          DB::table('books')->insert([
@@ -60,6 +65,7 @@ class BookSeeder extends Seeder
             'book_publisher'     => 'airlangga',
             'book_page_total'       => 355,
             'book_total'            => 70,
+            'book_stok'           => 70,
             'category_id'         => 1,
         ]);
          DB::table('books')->insert([
@@ -68,6 +74,7 @@ class BookSeeder extends Seeder
             'book_publisher'     => 'airlangga',
             'book_page_total'       => 355,
             'book_total'            => 70,
+            'book_stok'           => 70,
             'category_id'         => 1,
         ]);
          DB::table('books')->insert([
@@ -76,6 +83,7 @@ class BookSeeder extends Seeder
             'book_publisher'     => 'airlangga',
             'book_page_total'       => 355,
             'book_total'            => 70,
+            'book_stok'           => 70,
             'category_id'         => 1,
         ]);
          DB::table('books')->insert([
@@ -84,6 +92,7 @@ class BookSeeder extends Seeder
             'book_publisher'     => 'airlangga',
             'book_page_total'       => 355,
             'book_total'            => 70,
+            'book_stok'           => 70,
             'category_id'         => 1,
         ]);
          DB::table('books')->insert([
@@ -92,6 +101,7 @@ class BookSeeder extends Seeder
             'book_publisher'     => 'airlangga',
             'book_page_total'       => 355,
             'book_total'            => 70,
+            'book_stok'           => 70,
             'category_id'         => 1,
         ]);
          DB::table('books')->insert([
@@ -100,6 +110,7 @@ class BookSeeder extends Seeder
             'book_publisher'     => 'airlangga',
             'book_page_total'       => 355,
             'book_total'            => 70,
+            'book_stok'           => 70,
             'category_id'         => 1,
         ]);
          DB::table('books')->insert([
@@ -108,6 +119,7 @@ class BookSeeder extends Seeder
             'book_publisher'     => 'airlangga',
             'book_page_total'       => 355,
             'book_total'            => 70,
+            'book_stok'           => 70,
             'category_id'         => 1,
         ]);
     }

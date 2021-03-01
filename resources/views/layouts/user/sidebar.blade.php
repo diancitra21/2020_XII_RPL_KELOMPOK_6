@@ -18,9 +18,14 @@
                       <ul class="nav nav-list tree" style="display: none;">
                           <li><a href="{{URL::to('/list-buku')}}">Daftar Buku</a></li>
                       </ul>
-                        <ul class="nav nav-list tree" style="display: none;">
-                          <li><a href="{{URL::to('/peminjaman')}}">Peminjaman</a></li>
-                      </ul>
+                       
+                      <li class="active ripple">
+
+                    <a href="{{URL::to('/peminjaman')}}"><span class="fa fa-bookmark-o"></span> History Peminjaman
+                    </a>
+
+                                       </li>
+
 
                     </li>
 

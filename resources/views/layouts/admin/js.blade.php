@@ -53,6 +53,8 @@
 
     <!-- custom -->
      <script src="asset/js/main.js"></script>
+     <div id="ascrail2000" class="nicescroll-rails" style="width: 7px; z-index: 222; cursor: default; position: fixed; top: 50px; left: 223px; height: 625px; opacity: 0;">
+        <div style="position: relative; top: 0px; float: right; width: 5px; height: 423px; background-color: rgb(33, 150, 243); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px;"></div></div>
      <script type="text/javascript">
       (function(jQuery){
 

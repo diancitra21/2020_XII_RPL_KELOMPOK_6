@@ -21,7 +21,9 @@ class BorrowController extends Controller
     	$borrow  = Borrows::join('books', 'borrows.book_id', '=', 'books.book_id')
             ->join('users', 'borrows.usr_id', '=', 'users.usr_id')
             ->where('status'  , 0)
-            ->select('borrows.*', 'books.*', 'users.*')->get();
+            ->select('borrows.*', 'books.*', 'users.*')
+            ->orderBy('borrows.borrow_id',  'DESC')
+            ->get();
 
     	return view ('admin.peminjaman-buku',['borrow' => $borrow, 'row' => $row, 'topTable'  => $topTable]);
     }
@@ -45,7 +47,7 @@ class BorrowController extends Controller
             return redirect('/list-book')->with('info', 'stok habis');
         } elseif($stock < $tot_borrow) {
             \Session::flash('gagal', 'Jumlah Pinjam Lebih Dari Stok');
-            return ('stok nya kurang');
+            return redirect('/list-book')->with('info', 'stok buku kurang') ;
         } elseif ($stock > $tot_borrow or $stock == $tot_borrow) {
 
         $borrow = new Borrows;
@@ -73,6 +75,6 @@ class BorrowController extends Controller
         $book = Books::whereBookId($brw->book_id)->first();
         $book->book_stok += $brw->borrow_total_books;
         $book->save();
-        return back()->withSuccess('Pengembalian Buku Berhasil');
+        return redirect('/history-peminjaman')->withSuccess('Pengembalian Buku Berhasil');
    }
 }

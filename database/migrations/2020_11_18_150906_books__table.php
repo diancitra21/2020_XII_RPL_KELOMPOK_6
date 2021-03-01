@@ -21,7 +21,8 @@ class BooksTable extends Migration
             $table->foreign('class_id') -> references('class_id')->on('classes');
             $table->string('book_publisher');
             $table->bigInteger('book_page_total');
-            $table->string('book_total');
+            $table->bigInteger('book_total');
+            $table->bigInteger('book_stok')->nullable();
             $table->foreignId('category_id');
             $table->foreign('category_id') -> references('category_id')->on('categories');
             $table->timestamps();

@@ -48,10 +48,16 @@
                     </a>
                     <ul class="nav nav-list tree" style="display: none;">
                         <li><a href="{{URL::to('/Peminjaman-buku')}}"> Peminjaman</a></li>
-                        <li><a href="{{URL::to('/history-peminjaman')}}"> History Peminjaman</a></li>
 
 
                     </ul>
+
+                     <li class="active ripple">
+
+                    <a href="{{URL::to('/history-peminjaman')}}"><span class="fa fa-bookmark-o"></span> History Peminjaman
+                    </a>
+
+                                       </li>
 
 
         </div>

@@ -46,6 +46,12 @@
                       </div>
 
                       <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                        <input type="number" maxlength="4" name="stok_buku" class="form-text mask-cep"  required="" value="{{$book->book_total}}">
+                        <span class="bar"></span>
+                        <label>Stok Buku</label>
+                      </div>
+
+                      <div class="form-group form-animate-text" style="margin-top:40px !important;">
                         <h4>kategori Buku</h4>
                         <select name="kategori_buku" class="form-control">
                           @foreach($category as $data)

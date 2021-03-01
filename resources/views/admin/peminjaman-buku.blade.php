@@ -86,7 +86,7 @@
                                                         @if($data->status == 0)
                                                             Sedang Dipinjam
                                                         @elseif($data->status == 1)
-                                                            Sudah DIkembalikan
+                                                            Sudah Dikembalikan
                                                         @endif
                                                     </td>
                                                     <td>
