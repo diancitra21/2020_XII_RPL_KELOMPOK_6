@@ -30,28 +30,28 @@
                         @foreach($book as $data)
                       <tr role="row" class="odd">
                         <td>{{$row++}}</td>
-                        <td>{{$data ->title_book}}</td>
-                        <td>{{$data ->tingkatan}}</td>
-                        <td>{{$data ->book_publisher}} </td>
-                        <td>{{$data ->book_page_total}} </td>
-                        <td>{{$data ->book_total}} </td>
+                        <td>{{$data ->bok_title_book}}</td>
+                        <td>{{$data ->cls_tingkatan}}</td>
+                        <td>{{$data ->bok_publisher}} </td>
+                        <td>{{$data ->bok_page_total}} </td>
+                        <td>{{$data ->bok_total}} </td>
                         <td>
-                            @if ($data->book_stok == 0)
+                            @if ($data->bok_stok == 0)
                                 Stok Habis
                             @else
-                                {{ $data->book_stok }}
+                                {{ $data->bok_stok }}
                             @endif
                         </td>
-                        <td>{{$data ->book_category}} </td>
+                        <td>{{$data ->cat_book_category}} </td>
                         
                                              
                         
                         <td>
                           
-                          <a href = "{{URL::to('edit-book/'.$data->book_id)}}" class="btn btn-3d btn-primary mr-2">Edit</a>
+                          <a href = "{{URL::to('edit-book/'.$data->bok_id)}}" class="btn btn-3d btn-primary mr-2">Edit</a>
                         
-                        <a href="{{('delete/'.$data->book_id)}}">
-                          <input type="hidden" name="book_id" value="<?=$data->book_id?>">
+                        <a href="{{('delete/'.$data->bok_id)}}">
+                          <input type="hidden" name="book_id" value="<?=$data->bok_id?>">
                           <button onclick="return confirm('Yakin anda ingin menghapus?') "class="btn btn-3d btn-danger mr-2">Delete</button>
                           {{csrf_field()}}
                           

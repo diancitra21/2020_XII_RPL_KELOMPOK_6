@@ -47,12 +47,12 @@ Route::group(['middleware' => ['role:admin', 'auth']], function () {
     Route::get('book', 'BookController@index');
     Route::get('tambah_buku', 'BookController@add_book');
     Route::post('book', 'BookController@save');
-    Route::get('edit-book/{book_id}', 'BookController@edit');
-    Route::post('update/{book_id}', 'BookController@update');
-    Route::get('delete/{book_id}', 'BookController@delete');
+    Route::get('edit-book/{bok_id}', 'BookController@edit');
+    Route::post('update/{bok_id}', 'BookController@update');
+    Route::get('delete/{bok_id}', 'BookController@delete');
     Route::get('/list-book', 'BookController@list_book');
-    Route::get('/pinjam_buku/{book_id}', 'BorrowController@pinjamBuku');
-    Route::post('/Peminjaman-buku/{book_id}', 'BorrowController@saveBorrow');
+    Route::get('/pinjam_buku/{bok_id}', 'BorrowController@pinjamBuku');
+    Route::post('/Peminjaman-buku/{bok_id}', 'BorrowController@saveBorrow');
 
 //peminjaman
     Route::get('Peminjaman-buku', 'BorrowController@index');

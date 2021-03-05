@@ -14,16 +14,16 @@ class BorrowsTable extends Migration
     public function up()
     {
         Schema::create('borrows', function (Blueprint $table) {
-            $table->bigIncrements('borrow_id');
-            $table->foreignId('book_id');
-            $table->foreign('book_id') -> references('book_id')->on('books');
-            $table->foreignId('usr_id');
-            $table->foreign('usr_id') -> references('usr_id')->on('users');
-            $table->biginteger('borrow_total_books');
-            $table->date('borrow_date');
-            $table->date('borrow_back_date')->nullable();
-            $table->Integer('status')->default(0);
-            $table->string('borrow_fine')->nullable();
+            $table->bigIncrements('bor_id');
+            $table->foreignId('bor_book_id');
+            $table->foreign('bor_book_id') -> references('bok_id')->on('books');
+            $table->foreignId('bor_usr_id');
+            $table->foreign('bor_usr_id') -> references('usr_id')->on('users');
+            $table->biginteger('bor_total_books');
+            $table->date('bor_date');
+            $table->date('bor_back_date')->nullable();
+            $table->Integer('bor_status')->default(0);
+            $table->string('bor_fine')->nullable();
             $table->timestamps();
         });
     }

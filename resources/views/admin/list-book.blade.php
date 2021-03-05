@@ -95,21 +95,21 @@
                         @foreach($book as $data)
                       <tr role="row" class="odd">
                         <td>{{$row++}}</td>
-                        <td>{{$data ->title_book}}</td>
-                        <td>{{$data ->tingkatan}}</td>
-                        <td>{{$data ->book_publisher}} </td>
-                        <td>{{$data ->book_page_total}} </td>
-                        <td>{{$data ->book_total}} </td>
+                        <td>{{$data ->bok_title_book}}</td>
+                        <td>{{$data ->cls_tingkatan}}</td>
+                        <td>{{$data ->bok_publisher}} </td>
+                        <td>{{$data ->bok_page_total}} </td>
+                        <td>{{$data ->bok_total}} </td>
                         <td>
-                            @if ($data->book_stok == 0)
+                            @if ($data->bok_stok == 0)
                                 Stok Habis
                             @else
-                                {{ $data->book_stok }}
+                                {{ $data->bok_stok }}
                             @endif
                         </td>
-                        <td>{{$data ->book_category}} </td>
+                        <td>{{$data ->bok_category}} </td>
                         <td>
-                          <a href = "{{URL::to('/pinjam_buku/'.$data->book_id)}}" class="btn btn-3d bg-info mr-2">Pinjam</a><br><br><br>
+                          <a href = "{{URL::to('/pinjam_buku/'.$data->bok_id)}}" class="btn btn-3d bg-info mr-2">Pinjam</a><br><br><br>
                             {{csrf_field()}}
 
                         @include('sweetalert::alert')

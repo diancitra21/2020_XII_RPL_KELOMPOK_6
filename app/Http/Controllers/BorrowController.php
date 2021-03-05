@@ -18,27 +18,27 @@ class BorrowController extends Controller
     {
     	$row = 1;
         $topTable = 0;
-    	$borrow  = Borrows::join('books', 'borrows.book_id', '=', 'books.book_id')
-            ->join('users', 'borrows.usr_id', '=', 'users.usr_id')
-            ->where('status'  , 0)
+    	$borrow  = Borrows::join('books', 'borrows.bor_book_id', '=', 'books.bok_id')
+            ->join('users', 'borrows.bor_usr_id', '=', 'users.usr_id')
+            ->where('bor_status'  , 0)
             ->select('borrows.*', 'books.*', 'users.*')
-            ->orderBy('borrows.borrow_id',  'DESC')
+            ->orderBy('borrows.bor_id',  'DESC')
             ->get();
 
     	return view ('admin.peminjaman-buku',['borrow' => $borrow, 'row' => $row, 'topTable'  => $topTable]);
     }
 
 
- public function PinjamBuku(request $request, $book_id){
+ public function PinjamBuku(request $request, $bok_id){
         $user = User::all();
 
-        $book = Books::whereBookId($book_id)->first();
+        $book = Books::whereBokId($bok_id)->first();
         return view('admin.pinjam_buku', ['user' => $user, 'book' => $book]);
     }
 
-     public function saveBorrow(Request $request, $book_id){
-        $book = Books::whereBookId($book_id)->first();
-        $stock = $book->book_stok;
+     public function saveBorrow(Request $request, $bok_id){
+        $book = Books::whereBookId($bok_id)->first();
+        $stock = $book->bok_stok;
         $tot_borrow = $request->input('jumlahpinjam');
 
 
@@ -51,12 +51,12 @@ class BorrowController extends Controller
         } elseif ($stock > $tot_borrow or $stock == $tot_borrow) {
 
         $borrow = new Borrows;
-        $borrow->book_id                = $request->judul_buku;
-        $borrow->usr_id                 = $request->namapeminjam;
-        $borrow->borrow_total_books     = $request->jumlahpinjam;
-        $borrow->borrow_date            = $request->tgl_pinjam;
-        $borrow->borrow_back_date       = $request->tgl_kembali;
-        $borrow->status                 = 0;
+        $borrow->bor_book_id                = $request->judul_buku;
+        $borrow->bor_usr_id                 = $request->namapeminjam;
+        $borrow->bor_total_books     = $request->jumlahpinjam;
+        $borrow->bor_date            = $request->tgl_pinjam;
+        $borrow->bor_back_date       = $request->tgl_kembali;
+        $borrow->bor_status                 = 0;
         $save =  $borrow->save();
         if($save){
             $book->book_stok = $stock - $tot_borrow;
@@ -67,13 +67,13 @@ class BorrowController extends Controller
    }
 
    public function storeReturn(Request $request){
-        $borrow_id = $request->input('borrow_id');
-        $brw = Borrows::whereBorrowId($borrow_id)->first();
+        $borrow_id = $request->input('bor_id');
+        $brw = Borrows::whereBorrowId($bor_id)->first();
         $brw->status = 1;
         $brw->save();
 
-        $book = Books::whereBookId($brw->book_id)->first();
-        $book->book_stok += $brw->borrow_total_books;
+        $book = Books::whereBookId($brw->bor_bok_id)->first();
+        $book->book_stok += $brw->bor_total_books;
         $book->save();
         return redirect('/history-peminjaman')->withSuccess('Pengembalian Buku Berhasil');
    }

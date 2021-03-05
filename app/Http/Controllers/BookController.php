@@ -16,8 +16,8 @@ class BookController extends Controller
     public function index()
     {
         $row = 1;
-        $book  = Books::join('classes', 'books.class_id', '=', 'classes.class_id')->join('categories', 'books.category_id', '=', 'categories.category_id')->select('books.*', 'classes.*', 'categories.*')
-        ->orderBy('books.book_id',  'DESC')
+        $book  = Books::join('classes', 'books.bok_class_id', '=', 'classes.cls_id')->join('categories', 'books.bok_category_id', '=', 'categories.cat_id')->select('books.*', 'classes.*', 'categories.*')
+        ->orderBy('books.bok_id',  'DESC')
             ->get();
         return view ('admin.book',['book' => $book, 'row' => $row]);
 
@@ -31,35 +31,35 @@ class BookController extends Controller
     }
     public function save(Request $request){ 
         $book = new Books;
-         $book->title_book        = $request->judul_buku;
-        $book->class_id           = $request->kelas;
-        $book->book_publisher     = $request->penerbit;
-        $book->book_page_total    = $request->jumlah_halaman;
-        $book->book_total         = $request->total_buku;
-        $book->book_stok         = $request->total_buku;
-        $book->category_id      = $request->kategori_buku;
+        $book->bok_title_book        = $request->judul_buku;
+        $book->bok_class_id           = $request->kelas;
+        $book->bok_publisher     = $request->penerbit;
+        $book->bok_page_total    = $request->jumlah_halaman;
+        $book->bok_total         = $request->total_buku;
+        $book->bok_stok         = $request->total_buku;
+        $book->bok_category_id      = $request->kategori_buku;
         $book->save();
         return redirect('/book')->with('success', 'Data Berhasil Disimpan!');
     }
 
-    public function edit($book_id)
+    public function edit($bok_id)
     {
-        $book = Books::find($book_id);
+        $book = Books::find($bok_id);
         $class = classes::all();
         $category = Categories::all();
         return view ('admin.edit-book',['book'=> $book, 'class'=> $class, 'category' => $category]);
     }
 
-    public function update(Request $request, $book_id)
+    public function update(Request $request, $bok_id)
     {
         $book = Books::find($book_id);
-        $book->title_book        = $request->judul_buku;
-        $book->class_id          = $request->kelas;
-        $book->book_publisher    = $request->penerbit;
-        $book->book_page_total   = $request->jumlah_halaman;
-        $book->book_total        = $request->jumlah_buku;
-        $book->book_stok        = $request->stok_buku;
-        $book->category_id     = $request->kategori_buku;
+        $book->bok_title_book        = $request->judul_buku;
+        $book->bok_class_id          = $request->kelas;
+        $book->bok_publisher    = $request->penerbit;
+        $book->bok_page_total   = $request->jumlah_halaman;
+        $book->bok_total        = $request->jumlah_buku;
+        $book->bok_stok        = $request->stok_buku;
+        $book->bok_category_id     = $request->kategori_buku;
         $book->update();
         return redirect('/book')->with('success', 'Data Berhasil Diedit!');
     }
@@ -74,8 +74,8 @@ class BookController extends Controller
     public function list_book()
     {
         $row = 1;
-         $book  = Books::join('classes', 'books.class_id', '=', 'classes.class_id')->join('categories', 'books.category_id', '=', 'categories.category_id')->select('books.*', 'classes.*', 'categories.*')
-         ->orderBy('books.book_id',  'DESC')
+         $book  = Books::join('classes', 'books.bok_class_id', '=', 'classes.cls_id')->join('categories', 'books.bok_category_id', '=', 'categories.cat_id')->select('books.*', 'classes.*', 'categories.*')
+         ->orderBy('books.bok_id',  'DESC')
             ->get();
         return view('admin.list-book', ['book' => $book, 'row'=>$row]);
     }

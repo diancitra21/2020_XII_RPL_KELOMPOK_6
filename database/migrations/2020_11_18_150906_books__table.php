@@ -15,16 +15,16 @@ class BooksTable extends Migration
     public function up()
     {
         Schema::create('books', function (Blueprint $table) {
-            $table->bigIncrements('book_id');
-            $table->string('title_book');
-            $table->foreignId('class_id');
-            $table->foreign('class_id') -> references('class_id')->on('classes');
-            $table->string('book_publisher');
-            $table->bigInteger('book_page_total');
-            $table->bigInteger('book_total');
-            $table->bigInteger('book_stok')->nullable();
-            $table->foreignId('category_id');
-            $table->foreign('category_id') -> references('category_id')->on('categories');
+            $table->bigIncrements('bok_id');
+            $table->string('bok_title_book');
+            $table->foreignId('bok_class_id');
+            $table->foreign('bok_class_id') -> references('cls_id')->on('classes');
+            $table->string('bok_publisher');
+            $table->bigInteger('bok_page_total');
+            $table->bigInteger('bok_total');
+            $table->bigInteger('bok_stok')->nullable();
+            $table->foreignId('bok_category_id');
+            $table->foreign('bok_category_id') -> references('cat_id')->on('categories');
             $table->timestamps();
             $table->softDeletes('deleted_at', 0);
         });

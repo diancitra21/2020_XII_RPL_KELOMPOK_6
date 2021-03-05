@@ -12,22 +12,22 @@ class ClassSeeder extends Seeder
     public function run()
     {
         DB::table('classes')->insert([
-            'class_id' 	=> '1',
-            'tingkatan' => '10',
+            'cls_id' 	=> '1',
+            'cls_tingkatan' => '10',
         ]);
 
         DB::table('classes')->insert([
-            'class_id' 	=> '2',
-            'tingkatan' => '11',
+            'cls_id' 	=> '2',
+            'cls_tingkatan' => '11',
         ]);
 
         DB::table('classes')->insert([
-            'class_id' 	=> '3',
-            'tingkatan' => '12',
+            'cls_id' 	=> '3',
+            'cls_tingkatan' => '12',
         ]);
         DB::table('classes')->insert([
-            'class_id'  => '4',
-            'tingkatan' => '0',
+            'cls_id'  => '4',
+            'cls_tingkatan' => '0',
         ]);
     }
 }
