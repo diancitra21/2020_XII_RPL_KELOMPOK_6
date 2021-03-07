@@ -48,7 +48,7 @@ class BookSeeder extends Seeder
             'bok_page_total'       => 355,
             'bok_total'            => 70,
     'bok_stok'           => 70,
-            'bok_category_id'         => 1,
+            'bok_category_id'         => 2,
         ]);
          DB::table('books')->insert([
             'bok_title_book'            => 'Basis Data',
@@ -57,7 +57,7 @@ class BookSeeder extends Seeder
             'bok_page_total'       => 355,
             'bok_total'            => 70,
             'bok_stok'           => 70,
-            'bok_category_id'         => 1,
+            'bok_category_id'         => 2,
         ]);
          DB::table('books')->insert([
             'bok_title_book'            => 'Basis Data',
@@ -66,7 +66,7 @@ class BookSeeder extends Seeder
             'bok_page_total'       => 355,
             'bok_total'            => 70,
             'bok_stok'           => 70,
-            'bok_category_id'         => 1,
+            'bok_category_id'         => 2,
         ]);
          DB::table('books')->insert([
             'bok_title_book'            => 'PDKK',
@@ -75,7 +75,7 @@ class BookSeeder extends Seeder
             'bok_page_total'       => 355,
             'bok_total'            => 70,
             'bok_stok'           => 70,
-            'bok_category_id'         => 1,
+            'bok_category_id'         => 2,
         ]);
          DB::table('books')->insert([
             'bok_title_book'            => 'PDKK',
@@ -84,7 +84,7 @@ class BookSeeder extends Seeder
             'bok_page_total'       => 355,
             'bok_total'            => 70,
             'bok_stok'           => 70,
-            'bok_category_id'         => 1,
+            'bok_category_id'         => 2,
         ]);
          DB::table('books')->insert([
             'bok_title_book'            => 'PDKK',
@@ -93,7 +93,7 @@ class BookSeeder extends Seeder
             'bok_page_total'       => 355,
             'bok_total'            => 70,
             'bok_stok'           => 70,
-            'bok_category_id'         => 1,
+            'bok_category_id'         => 2,
         ]);
          DB::table('books')->insert([
             'bok_title_book'            => 'Matematika',

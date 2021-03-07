@@ -17,7 +17,7 @@ class PayFines extends Migration
             $table->bigIncrements('pay_id');
             $table->foreignId('pay_borrow_id');
             $table->foreign('pay_borrow_id') -> references('bor_id')->on('borrows');
-            $table->foreignId('pay_fine');
+            $table->string('pay_fine');
             $table->timestamps();
         });
     }

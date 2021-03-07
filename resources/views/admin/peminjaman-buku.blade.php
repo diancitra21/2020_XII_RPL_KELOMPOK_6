@@ -86,7 +86,7 @@
                                                         @if($data->bor_status == 0)
                                                             Sedang Dipinjam
                                                         @elseif($data->bor_status == 1)
-                                                            Sudah DIkembalikan
+                                                            Sudah Dikembalikan
                                                         @elseif($data->bor_status == 2)
                                                             Harus Bayar Denda
 
