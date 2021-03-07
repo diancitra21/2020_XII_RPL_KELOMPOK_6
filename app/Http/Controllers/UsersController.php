@@ -17,7 +17,9 @@ class UsersController extends Controller
     public function ListBuku()
     {
     	 $row = 1;
-        $book  = Books::join('classes', 'books.class_id', '=', 'classes.class_id')->join('categories', 'books.category_id', '=', 'categories.category_id')->select('books.*', 'classes.*', 'categories.*')->get();
+        $book  = Books::join('classes', 'books.bok_class_id', '=', 'classes.cls_id')->join('categories', 'books.bok_category_id', '=', 'categories.cat_id')->select('books.*', 'classes.*', 'categories.*')
+        ->orderBy('books.bok_id',  'DESC')
+            ->get();
         return view ('users.list-buku',['book' => $book, 'row' => $row]);
     }
 
@@ -50,13 +52,13 @@ class UsersController extends Controller
     }
 
     public function peminjaman (){
-        $data ['borrow']  = Borrows::join('books', 'borrows.book_id', '=', 'books.book_id')
-            ->join('users', 'borrows.usr_id', '=', 'users.usr_id')
-            ->where('borrows.usr_id'  , Auth::user()->usr_id)
+        $data ['borrow']  = Borrows::join('books', 'borrows.bor_book_id', '=', 'books.bok_id')
+            ->join('users', 'borrows.bor_usr_id', '=', 'users.usr_id')
+            ->where('borrows.bor_usr_id'  , Auth::user()->usr_id)
             ->select(
                 'borrows.*', 'books.*', 'users.*',
             )
-            ->orderBy('borrows.borrow_id',  'DESC')
+            ->orderBy('borrows.bor_id',  'DESC')
             ->get();
         return view ('users.peminjaman-buku-user', $data);
     }

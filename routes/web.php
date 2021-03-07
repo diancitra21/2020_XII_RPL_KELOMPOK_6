@@ -53,6 +53,7 @@ Route::group(['middleware' => ['role:admin', 'auth']], function () {
     Route::get('/list-book', 'BookController@list_book');
     Route::get('/pinjam_buku/{bok_id}', 'BorrowController@pinjamBuku');
     Route::post('/Peminjaman-buku/{bok_id}', 'BorrowController@saveBorrow');
+    Route::get('/denda', 'BorrowController@Denda');
 
 //peminjaman
     Route::get('Peminjaman-buku', 'BorrowController@index');

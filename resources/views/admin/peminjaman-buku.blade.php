@@ -83,9 +83,9 @@
                                                     <td>{{$data->bor_date}}</td>
                                                     <td>{{$data->bor_back_date}}</td>
                                                     <td>
-                                                        @if($data->status == 0)
+                                                        @if($data->bor_status == 0)
                                                             Sedang Dipinjam
-                                                        @elseif($data->status == 1)
+                                                        @elseif($data->bor_status == 1)
                                                             Sudah Dikembalikan
                                                         @endif
                                                     </td>
@@ -96,10 +96,12 @@
                                                             $now = new DateTime($data->bor_back_date);
                                                             $date = $now->diff(\Carbon\Carbon::now());
                                                             $price_denda = 1000;
-                                                            echo 'Rp.' . number_format($date->d * 1000);
+                                                            $denda = $date->d * 1000;
+                                                            echo 'Rp.' . number_format($denda);
 
                                                         } else {
-
+                                                            $denda = '0';
+                                                            echo $denda;
                                                         }
 
                                                         ?>
@@ -108,14 +110,47 @@
                                                     </td>
                                                     @if($data->bor_status == 0)
                                                         <td>
-                                                            <form method="post" action="">
+                                                            <form method="post" action="{{URL::to('Peminjaman-buku')}}">
                                                                 @csrf
+                                                                <input type="hidden" name="brw_fine" value="{{$denda}}">
                                                                 <input hidden name="bor_id"
                                                                        value="{{$data->bor_id}}">
                                                                 <button type="submit"
                                                                         class="btn btn-3d btn-danger mr-2">Kembali
                                                                 </button>
                                                             </form>
+                                                        </td>
+                                                        @elseif($data->bor_status==2)
+                                                        <td>
+                                                            <!-- Button trigger modal -->
+<button type="button" class="btn btn-3d btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+Bayar Denda
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Form Bayar Denda</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                        <input type="text" class="form-text mask-time" name="bayar_denda" required="" value="">
+                        <span class="bar"></span>
+                        <label>Bayar Denda</label>
+                      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Bayar</button>
+        <button type="button" class="btn btn-primary">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
                                                         </td>
                                                 @endif
 

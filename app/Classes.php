@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Classes extends Model
 {
     protected $table	= 'classes';
-    protected $primaryKey = 'class_id';
-    protected $fillable	= ['class_id', 'tingkatan'];
+    protected $primaryKey = 'cls_id';
+    protected $fillable	= ['cls_id', 'cls_tingkatan'];
 }

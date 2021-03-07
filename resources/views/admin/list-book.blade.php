@@ -107,7 +107,7 @@
                                 {{ $data->bok_stok }}
                             @endif
                         </td>
-                        <td>{{$data ->bok_category}} </td>
+                        <td>{{$data ->cat_book_category}} </td>
                         <td>
                           <a href = "{{URL::to('/pinjam_buku/'.$data->bok_id)}}" class="btn btn-3d bg-info mr-2">Pinjam</a><br><br><br>
                             {{csrf_field()}}

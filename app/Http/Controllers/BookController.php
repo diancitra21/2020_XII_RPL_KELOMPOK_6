@@ -44,17 +44,19 @@ class BookController extends Controller
 
     public function edit($bok_id)
     {
-        $book = Books::find($bok_id);
+       $book = Books::find($bok_id);
         $class = classes::all();
         $category = Categories::all();
+       
+         
         return view ('admin.edit-book',['book'=> $book, 'class'=> $class, 'category' => $category]);
     }
 
     public function update(Request $request, $bok_id)
     {
-        $book = Books::find($book_id);
+        $book = Books::find($bok_id);
         $book->bok_title_book        = $request->judul_buku;
-        $book->bok_class_id          = $request->kelas;
+        $book->bok_class_id       = $request->kelas;
         $book->bok_publisher    = $request->penerbit;
         $book->bok_page_total   = $request->jumlah_halaman;
         $book->bok_total        = $request->jumlah_buku;
@@ -64,9 +66,9 @@ class BookController extends Controller
         return redirect('/book')->with('success', 'Data Berhasil Diedit!');
     }
 
-    public function delete($book_id)
+    public function delete($bok_id)
     {
-        $book = Books::find($book_id);
+        $book = Books::find($bok_id);
         $book->delete();
         return redirect('/book')->with('success', 'Data Berhasil Di Hapus!');
     }

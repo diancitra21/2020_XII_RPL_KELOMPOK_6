@@ -9,14 +9,14 @@
                   <div class="col-md-12 panel-body">
                     <div class="col-md-12">
                      <div class="col-md-12">
-                      <form action="{{URL::to('/Peminjaman-buku/'.$book->book_id)}}" method="POST">
+                      <form action="{{URL::to('/Peminjaman-buku/'.$book->bok_id)}}" method="POST">
                       @csrf
                      
                       <div class="form-group form-animate-text" style="margin-top:40px !important;">
                         <h4>Judul Buku</h4>
                         
-                        <input type="hidden" name="judul_buku" class="form-text mask-date" value="{{ $book->book_id }}">
-<input type="text" class="form-text mask-date" name="judul_buku" disabled value="{{ $book->title_book }}">
+                        <input type="hidden" name="judul_buku" class="form-text mask-date" value="{{ $book->bok_id }}">
+<input type="text" class="form-text mask-date" name="judul_buku" disabled value="{{ $book->bok_title_book }}">
                         
                       </div>
                       <div class="form-group form-animate-text" style="margin-top:40px !important;">

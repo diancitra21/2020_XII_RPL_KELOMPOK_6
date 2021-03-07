@@ -92,12 +92,12 @@
                         @foreach($book as $data)
                       <tr role="row" class="odd">
                         <td>{{$row++}}</td>
-                        <td>{{$data ->title_book}}</td>
-                        <td>{{$data ->tingkatan}}</td>
-                        <td>{{$data ->book_publisher}} </td>
-                        <td>{{$data ->book_page_total}} </td>
-                        <td>{{$data ->book_total}} </td>                        
-                        <td>{{$data ->book_category}} </td>
+                        <td>{{$data ->bok_title_book}}</td>
+                        <td>{{$data ->cls_tingkatan}}</td>
+                        <td>{{$data ->bok_publisher}} </td>
+                        <td>{{$data ->bok_page_total}} </td>
+                        <td>{{$data ->bok_total}} </td>                        
+                        <td>{{$data ->cat_book_category}} </td>
                         
                           
           

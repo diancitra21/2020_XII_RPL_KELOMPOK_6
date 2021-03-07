@@ -21,7 +21,7 @@
                         <h4>kelas</h4>
                         <select name="kelas" class="form-control">
                           @foreach($class as $data)
-                          <option value="{{ $data->class_id }}"> {{ $data->tingkatan }} </option>
+                          <option value="{{ $data->cls_id }}"> {{ $data->cls_tingkatan }} </option>
                           @endforeach
                         </select>
                         
@@ -50,7 +50,7 @@
                         <h4>kategori Buku</h4>
                         <select name="kategori_buku" class="form-control">
                           @foreach($category as $data)
-                          <option value="{{ $data->category_id }}"> {{ $data->book_category }} </option>
+                          <option value="{{ $data->cat_id }}"> {{ $data->cat_book_category }} </option>
                           @endforeach
                         </select>
                       </div>

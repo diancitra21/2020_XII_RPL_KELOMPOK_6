@@ -9,9 +9,8 @@ class Books extends Model
 {
 	use SoftDeletes;
     protected $table	= 'books';
-    protected $primaryKey = 'book_id';
-    protected $fillable	= ['book_id','title_book','class_id','book_publisher','book_page_total','book_total','book_category'];
+    protected $primaryKey = 'bok_id';
+    protected $fillable	= ['bok_id','bok_title_book','bok_class_id','bok_publisher','bok_page_total','bok_total','bok_category'];
 
     
 }
-

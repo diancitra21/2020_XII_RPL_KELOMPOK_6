@@ -71,23 +71,23 @@
                                             @foreach($borrow as $no => $data)
                                                 <tr role="row" class="odd">
                                                     <td>{{$no+1}}</td>
-                                                    <td>{{$data->title_book}}</td>
+                                                    <td>{{$data->bok_title_book}}</td>
                                                     <td>{{$data->usr_name}}</td>
-                                                    <td>{{$data->borrow_total_books}}</td>
-                                                    <td>{{$data->borrow_date}}</td>
-                                                    <td>{{$data->borrow_back_date}}</td>
+                                                    <td>{{$data->bor_total_books}}</td>
+                                                    <td>{{$data->bor_date}}</td>
+                                                    <td>{{$data->bor_back_date}}</td>
                                                     <td>
-                                                        @if($data->status == 0)
+                                                        @if($data->bor_status == 0)
                                                             Sedang Dipinjam
-                                                        @elseif($data->status == 1)
+                                                        @elseif($data->bor_status == 1)
                                                             Sudah Dikembalikan
                                                         @endif
                                                     </td>
                                                     <td>
 
                                                         <?php
-                                                        if ($data->borrow_back_date <= \Carbon\Carbon::now()) {
-                                                            $now = new DateTime($data->borrow_back_date);
+                                                        if ($data->bor_back_date <= \Carbon\Carbon::now()) {
+                                                            $now = new DateTime($data->bor_back_date);
                                                             $date = $now->diff(\Carbon\Carbon::now());
                                                             $price_denda = 1000;
                                                             echo 'Rp.' . number_format($date->d * 1000);
