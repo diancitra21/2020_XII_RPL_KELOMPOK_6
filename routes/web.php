@@ -78,7 +78,7 @@ Route::group(['middleware' => ['role:admin', 'auth']], function () {
 
     Route::get('detail_user/{usr_id}', 'UsersController@edit');
     Route::post('detail_user/update/{usr_id}', 'UsersController@update');
-
+    Route::post('/denda' , 'BorrowController@Denda');
 });
 
 //Route::get('/dashboard', 'User\UserController@DashboardUser')->name('dashboard.users');
