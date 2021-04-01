@@ -41,6 +41,11 @@
 
                     </ul>
                 </li>
+                <li class="active ripple">
+                    <a href="{{URL::to('koleksi')}}"><span class="fa fa-home"></span>Koleksi Buku
+                    </a>
+
+
                 <li class="ripple">
                     <a class="tree-toggle nav-header">
                         <span class="fa-area-chart fa"></span>Kelola Peminjaman

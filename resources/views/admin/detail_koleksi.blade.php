@@ -20,16 +20,13 @@
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 60px;">Penerbit</th>
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 51px;">Jumlah Halaman</th>
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Jumlah Buku</th>
-
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Stok Buku</th>
                         <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Kategori Buku</th>
                         <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Koleksi Buku</th>
-                        <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Action</th>
                       </tr>
                       </thead>
-
-                       <tbody>
-                        @foreach($book as $data)
+                      <tbody>    
+                        @foreach($collection as $data)
                       <tr role="row" class="odd">
                         <td>{{$row++}}</td>
                         <td>{{$data ->bok_title_book}}</td>
@@ -46,28 +43,27 @@
                         </td>
                         <td>{{$data ->cat_book_category}} </td>
                         <td>{{$data ->col_rack}} </td>
-                        <td>
-                          <a href = "{{URL::to('/pinjam_buku/'.$data->bok_id)}}" class="btn btn-3d bg-info mr-2">Pinjam</a><br><br><br>
-                            {{csrf_field()}}
-
-                        @include('sweetalert::alert')
-
+                                             
+                        {{csrf_field()}}
+                          
+                        
+                        
                                   <!--<a href="{{URL::to('delete/'.$data->book_id)}}">
                         <button type="submit" name="submit" class="btn btn-3d btn-danger mr">delete</button>-->
-
-
-
+                      
+                        
+                              
                           </td>
                       </tr>
-
+                      
                       @endforeach
-
+                      @include('sweetalert::alert')
 
                       <tr role="row" class="odd">
-
+                         
                       </tr>
                       <tr role="row" class="odd">
-
+                         
                       </tr>
                       <tr role="row" class="odd">
 
@@ -93,4 +89,5 @@
   </div>
 </div>
 </div>
+
 @endsection

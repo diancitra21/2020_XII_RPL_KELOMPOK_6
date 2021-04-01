@@ -54,6 +54,14 @@
                           @endforeach
                         </select>
                       </div>
+                      <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                        <h4>Koleksi Buku</h4>
+                        <select name="koleksi_buku" class="form-control">
+                      @foreach($collection as $data)
+                          <option value="{{ $data->col_id }}"> {{ $data->col_rack }} </option>
+                          @endforeach
+                        </select>
+                      </div>
                         <button type="submit" class="btn btn-3d btn-primary mr-2">Simpan</button>
                         <button type="back" class="btn btn-3d btn-danger mr-2">Cancel</button>
                         {{csrf_field()}}

@@ -81,18 +81,37 @@
                                                             Sedang Dipinjam
                                                         @elseif($data->bor_status == 1)
                                                             Sudah Dikembalikan
+                                                        @elseif($data->bor_status == 2)
+                                                            Harus Bayar Denda
+
                                                         @endif
                                                     </td>
                                                     <td>
 
                                                         <?php
-                                                        if ($data->bor_back_date <= \Carbon\Carbon::now()) {
-                                                            $now = new DateTime($data->bor_back_date);
-                                                            $date = $now->diff(\Carbon\Carbon::now());
-                                                            $price_denda = 1000;
-                                                            echo 'Rp.' . number_format($date->d * 1000);
+
+                                                        if ($data->bor_status == 2) {
+                                                            echo 'Rp  ' . number_format($data->bor_fine, 0,',' ,'.');
+                                                        } elseif ($data->bor_status == 0) {
+
+                                                            if ($data->bor_back_date <= \Carbon\Carbon::now()) {
+                                                                $now = new DateTime($data->bor_back_date);
+                                                                $date = $now->diff(\Carbon\Carbon::now());
+                                                                $price_denda = 1000;
+                                                                $denda = $date->d * 1000;
+                                                                echo 'Rp  ' . number_format($denda, 0,',' ,'.');
+
+                                                            } else {
+                                                                $denda = '0';
+                                                                echo $denda;
+                                                            }
 
                                                         } else {
+                                                            if ($data->bor_fine == null) {
+                                                                echo '0';
+                                                            } else {
+                                                                echo 'Rp. ' . number_format($data->bor_fine, 0, ',', '.');
+                                                            }
 
                                                         }
 
@@ -100,7 +119,6 @@
 
 
                                                     </td>
-
 
 
                                                 @include('sweetalert::alert')

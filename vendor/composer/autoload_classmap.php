@@ -143,6 +143,7 @@ return array(
     'Carbon\\Translator' => $vendorDir . '/nesbot/carbon/src/Carbon/Translator.php',
     'CategorySeeder' => $baseDir . '/database/seeds/CategorySeeder.php',
     'ClassSeeder' => $baseDir . '/database/seeds/ClassSeeder.php',
+    'CollectionSeeder' => $baseDir . '/database/seeds/CollectionSeeder.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Cron\\AbstractField' => $vendorDir . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
     'Cron\\CronExpression' => $vendorDir . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',

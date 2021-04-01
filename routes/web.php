@@ -39,14 +39,16 @@ Route::post('/account/reset-password', 'Auth\AccountController@updatePassword')-
 Route::get('/register-student', 'Auth\RegisterController@registerStudent');
 Route::get('/register-teacher', 'Auth\RegisterController@registerTeacher');
 Route::get('/register-staff', 'Auth\RegisterController@registerStaff');
-
+Route::get('visitor', 'VisitorController@index');
 //Route Untuk Admin, Student, Teacher, Staff TU, jika register dan login maka akan ke halaman ini
 Route::group(['middleware' => ['role:admin', 'auth']], function () {
 
     Route::get('/dashboard', 'User\UserController@index')->name('dashboard.admin');
     Route::get('book', 'BookController@index');
+    Route::get('koleksi', 'CollectionController@index');
     Route::get('tambah_buku', 'BookController@add_book');
     Route::post('book', 'BookController@save');
+    
     Route::get('edit-book/{bok_id}', 'BookController@edit');
     Route::post('update/{bok_id}', 'BookController@update');
     Route::get('delete/{bok_id}', 'BookController@delete');
@@ -54,6 +56,7 @@ Route::group(['middleware' => ['role:admin', 'auth']], function () {
     Route::get('/pinjam_buku/{bok_id}', 'BorrowController@pinjamBuku');
     Route::post('/Peminjaman-buku/{bok_id}', 'BorrowController@saveBorrow');
     Route::get('/denda', 'BorrowController@Denda');
+    Route::get('detail_koleksi/{col_id}', 'CollectionController@show');
 
 //peminjaman
     Route::get('Peminjaman-buku', 'BorrowController@index');

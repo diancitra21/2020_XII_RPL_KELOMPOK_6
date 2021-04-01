@@ -25,6 +25,8 @@ class BooksTable extends Migration
             $table->bigInteger('bok_stok')->nullable();
             $table->foreignId('bok_category_id');
             $table->foreign('bok_category_id') -> references('cat_id')->on('categories');
+            $table->foreignId('bok_collection_id');
+            $table->foreign('bok_collection_id') -> references('col_id')->on('collections');
             $table->timestamps();
             $table->softDeletes('deleted_at', 0);
         });

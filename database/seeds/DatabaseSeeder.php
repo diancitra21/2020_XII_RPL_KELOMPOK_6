@@ -15,9 +15,11 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(ClassSeeder::class);
         $this->call(CategorySeeder::class);
+           $this->call(CollectionSeeder::class);
         $this->call(BookSeeder::class);
         $this->call(BorrowSeeder::class);
         $this->call(Pay_finesSeeder::class);
+
 
     }
 }
