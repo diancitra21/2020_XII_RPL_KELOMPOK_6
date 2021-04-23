@@ -73,7 +73,11 @@
           <div id="datatables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
             <div class="row">
               <div class="col-sm-6">
-                  <div id="datatables-example_filter" class="dataTables_filter"></div></div></div>
+                  <div id="datatables-example_filter" class="dataTables_filter"></div></div></div><form action="/list-buku" method="GET" class="text-right" style="float:right">
+                <label><b>Search :</b></label>
+                   <input type="text"  name="cari" value="{{old('cari')}}"><br><br>
+                   
+                 </form>
                   <div class="row">
                     <div class="col-sm-12"><table id="datatables-example" class="table table-striped table-bordered dataTable no-footer" width="100%" cellspacing="0" role="grid" aria-describedby="datatables-example_info" style="width: 100%;">
                       <thead>
@@ -85,6 +89,7 @@
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 51px;">Jumlah Halaman</th>
                           <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Stok Buku</th>
                         <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Kategori Buku</th>
+                        <th class="sorting" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px;">Rak Buku</th>
                         
                       </tr>
                       </thead>
@@ -98,6 +103,7 @@
                         <td>{{$data ->bok_page_total}} </td>
                         <td>{{$data ->bok_total}} </td>                        
                         <td>{{$data ->cat_book_category}} </td>
+                        <td>{{$data ->col_rack}}</td>
                         
                           
           

@@ -6,6 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Users;
 use Validator;
+use App\Borrows;
+use App\Books;
+use App\Visitors;
+use App\Collections;
 
 class UserController extends Controller
 {
@@ -27,12 +31,17 @@ class UserController extends Controller
     
     public function index()
     {
-        return view ('admin.dashboard');
+        $borrow = Borrows::count();
+        $book = Books::count();
+        $user = Users::count();
+        $visitor = Visitors::count();
+        $collection= Collections::count();
+        return view ('admin.dashboard', ['borrow' => $borrow,'book' =>$book, 'user' => $user,'visitor' => $visitor,'collection'=>$collection]);
     }
 
     public function ListUser()
     {
-        $user = Users::all();
+        $user = Users::paginate(10);
         return view ('admin.list-user', ['user' => $user]);
     }
 
@@ -72,6 +81,16 @@ class UserController extends Controller
         return view('admin.dashboard');
     }
 
+public function cari( Request $request){
+
+$row = 1;
+
+$cari = $request->cari;
+
+$user = Users::where('usr_name','like',"%". $cari. "%")->paginate();
+
+
+return view('admin.list-user', ['user' => $user, 'row'=>$row]); }
 
     
 }

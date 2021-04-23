@@ -4,9 +4,20 @@
   <div class="col-md-12">
     <div class="panel">
       <div class="panel-heading"><h3>Data Buku</h3></div>
+
       <div class="panel-body">
         <div class="responsive-table">
-          <div id="datatables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+         <div id="datatables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+<div class="row">
+  <div class="col-sm-6">
+ </div></div></div></div><form action="/list-book/cari" method="GET" class="text-right" style="float:right">
+                <label><b>Search :</b></label>
+                   <input type="text"  name="cari" value="{{old('cari')}}">
+                   
+                 </form>
+                 <div class="dt-buttons btn-group">
+                  
+          <div id="datatables-example_filter" class="dataTables_filter"></div></div></div>
             <div class="row">
               <div class="col-sm-6">
                   <div id="datatables-example_filter" class="dataTables_filter"></div></div></div>
@@ -47,13 +58,11 @@
                         <td>{{$data ->cat_book_category}} </td>
                         <td>{{$data ->col_rack}} </td>
                         <td>
-                          <a href = "{{URL::to('/pinjam_buku/'.$data->bok_id)}}" class="btn btn-3d bg-info mr-2">Pinjam</a><br><br><br>
+                          <a href = "{{URL::to('/pinjam_buku/'.$data->bok_id)}}" class="btn btn-3d bg-info mr-2"><font color="white">Pinjam</font></a><br><br><br>
                             {{csrf_field()}}
 
                         @include('sweetalert::alert')
 
-                                  <!--<a href="{{URL::to('delete/'.$data->book_id)}}">
-                        <button type="submit" name="submit" class="btn btn-3d btn-danger mr">delete</button>-->
 
 
 
@@ -77,6 +86,7 @@
                       </tr>
                     </tbody>
                   </table>
+                  {{$book->links()}}
                 </div>
               </div>
               <div class="row">

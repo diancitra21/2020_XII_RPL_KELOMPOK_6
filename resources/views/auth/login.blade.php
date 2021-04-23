@@ -7,7 +7,7 @@
   <meta name="author" content="Isna Nur Azis">
   <meta name="keyword" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Miminium</title>
+  <title>Perpustakaan</title>
 
   <!-- start: Css -->
   <link rel="stylesheet" type="text/css" href="asset/css/bootstrap.min.css">
@@ -20,7 +20,7 @@
   <link href="asset/css/style.css" rel="stylesheet">
   <!-- end: Css -->
 
-  <link rel="shortcut icon" href="asset/img/logomi.png">
+  <link rel="shortcut icon" href="{{asset('asset/img/mahaputra.jpg')}}">
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -28,15 +28,12 @@
       <![endif]-->
     </head>
     
-    <body id="mimin">
-      <div style="background-image: url('asset/img/mahaputra.jpg'); no-repeat fixed; background-size: 100% 100%;">
-      <div class="container">
-        <form class="form-signin" method="POST" action="{{ route('login') }}">
-{{ csrf_field() }}
-          <div class="panel periodic-login">
-              <div class="panel-body text-center">
-                  <img class="card-img-top img-fluid" src="asset/img/22.png" alt="Card image cap">
-                  <p class="element-name"><h2>Perpustakaan</h2></p>
+    <body id="mimin"> <div style="background-color: lightblue;"> <div
+class="container"> <form class="form-signin" method="POST" action="{{
+route('login') }}"> {{ csrf_field() }} <div class="panel periodic-login"> <div
+class="panel-body text-center"> <img class="card-img-top img-fluid"
+src="asset/img/22.png" alt="Card image cap"> <p
+class="element-name"><h2>Perpustakaan</h2></p>
 
                   
                   <div class="form-group form-animate-text" style="margin-top:40px !important;">
@@ -51,7 +48,7 @@
                   <input type="checkbox" class="icheck pull-left" name="checkbox1"/> Remember me
                   </label>
                   <input type="submit" class="btn btn-3d bg-info mr-2 col-md-12" value="SignIn"/>
-                  <a href="visitor" class="btn btn-3d bg-info mr-2 col-md-12" value="visitor"/><font color="GREY">Visitor</font></a>
+                  
               </div>
                 <div class="text-center" style="padding:5px;">
                     <a href="forgotpass.html">Forgot Password </a>

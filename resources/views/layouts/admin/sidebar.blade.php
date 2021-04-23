@@ -18,6 +18,11 @@
                     <a href="{{URL::to('dashboard')}}"><span class="fa fa-home"></span>Dashboard
                     </a>
 
+
+                    <li class="active ripple">
+                    <a href="{{URL::to('buku_tamu')}}"><span class="icons icon-notebook"></span>Buku Tamu
+                    </a>
+
                 <li class="active ripple">
                     <a class="tree-toggle nav-header"><span class="fa fa-child"></span> User
                         <span class="fa-angle-right fa right-arrow text-right"></span>
@@ -36,19 +41,21 @@
                         <li><a href="{{URL::to('/list-book')}}">Daftar Buku</a></li>
 
                     </ul>
+
                     <ul class="nav nav-list tree" style="display: none;">
                         <li><a href="{{URL::to('/book')}}">Kelola Buku</a></li>
 
                     </ul>
-                </li>
-                <li class="active ripple">
-                    <a href="{{URL::to('koleksi')}}"><span class="fa fa-home"></span>Koleksi Buku
-                    </a>
+                     <ul class="nav nav-list tree" style="display: none;">
+                        <li><a href="{{URL::to('/koleksi')}}">Koleksi Buku</a></li>
 
+                    </ul>
+                </li>
+              
 
                 <li class="ripple">
                     <a class="tree-toggle nav-header">
-                        <span class="fa-area-chart fa"></span>Kelola Peminjaman
+                        <span class="icons icon-basket"></span>Kelola Peminjaman
                         <span class="fa-angle-right fa right-arrow text-right"></span>
                     </a>
                     <ul class="nav nav-list tree" style="display: none;">

@@ -60,45 +60,56 @@
 <form action="" method="post">
 	<table >
 
+		
 		<tr>
-			<td>Nama Pengunjung</td>
-			<td>:</td>
-			<td>
-				<input class="form-control" type="text" name="nama" placeholder="Masukan Nama Pengunjung" size="30">
-			</td>
-		</tr>
+			 <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                        <input type="text"  name="nama" class="form-text mask-cep" required="">
+                        <span class="bar"></span>
+                        <label>Nama Pengunjung</label>
+                      </div>
+
+
+                      <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                        <h4><div style='text-align:left;'><font color="GREY">Jabatan</h4>
+                        <select name="jabatan" class="form-control">
+                          @foreach($pst as $data)
+                          <option value="{{ $data->pst_id }}"> {{ $data->pst_jabatan }} </option>
+                          @endforeach
+                        </select>
+                      </div>
+
+
+                      <div style="margin-top:40px !important;">
+                        <h4><div style='text-align:left;'><font color="GREY">Tanggal Kunjungan</h4>
+                       
+                      
+            
+                      
+                        
+                          <input id="tgl_pinjam" type="date" class="form-control" name="tanggal" value="{{date('Y-m-d',strtotime(Carbon\Carbon::today()->toDateString())) }}" required  redonly >
+                          @if ($errors->has('tgl_pinjam'))
+                          <span class="help-block">
+                            <strong>{{$errors->first('tgl_pinjam') }}</strong>
+                          </span>
+                          @endif
+                      </div>
+      
+
+
+
+
+
+
+
 		<tr>
-			<td>Alamat</td>
+			<td></td>
 			<td></td>
 			<td>
-				<input  class="form-control" type="text" name="Alamat" placeholder="Alamat Pengunjung" size="30">
-			</td>
-		</tr>
-		<tr>
-			
-			
-		</tr>
-		<tr>
-			<td>Tujuan</td>
-			<td></td>
-			<td>
-				<select  class="form-control" name="Tujuan"> 
-					<option value="" selected>-Tujuan Kunjungan-</option>
-					<option>Kunjungan Biasa Membaca</option>
-					<option>Refleshing</option>
-					<option>Tugas Kuliah</option>
-					<option>Pencarian Literatur</option>
-					<option>Pengembalian Buku</option>
-					<option>Pendaftaran Anggota</option>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td>
-				<button class="btn btn-success btn-lg" type="submit" name="tambah">Simpan</button>
+				<button class="btn btn-success btn-lg" type="submit">Simpan</button>
 				</td>
+				@csrf
+
+				 @include('sweetalert::alert')
 		</tr>
 	</table>
 </form>

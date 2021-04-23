@@ -7,7 +7,18 @@
       <div class="panel-body">
         <div class="responsive-table">
           <div id="datatables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-            <div class="row">
+<div class="row">
+  <div class="col-sm-6">
+  </div>
+</div></div></div><form action="/list-user/cari" method="GET" class="text-right" style="float:right">
+                <label><b>Search :</b></label>
+                   <input type="text"  name="cari" value="{{old('cari')}}">
+                   
+                 </form>
+                 <div class="dt-buttons btn-group"><br>
+                  <div id="datatables-example_filter" class="dataTables_filter"></div></div></div>
+                   
+            
                   <div class="row">
                     <div class="col-sm-12"><table id="datatables-example" class="table table-striped table-bordered dataTable no-footer" width="100%" cellspacing="0" role="grid" aria-describedby="datatables-example_info" style="width: 100%;">
                       <thead>
@@ -44,6 +55,7 @@
                       </tr>
                     </tbody>
                   </table>
+                  {{$user->links()}}
                 </div>
               </div>
              

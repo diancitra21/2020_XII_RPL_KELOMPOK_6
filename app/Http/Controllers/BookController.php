@@ -22,7 +22,7 @@ class BookController extends Controller
         ->join('collections', 'books.bok_collection_id', '=', 'collections.col_id')
         ->select('books.*', 'classes.*', 'categories.*', 'collections.*')
         ->orderBy('books.bok_id',  'DESC')
-            ->get();
+            ->paginate(10);
         return view ('admin.book',['book' => $book, 'row' => $row]);
 
         
@@ -81,6 +81,23 @@ class BookController extends Controller
         return redirect('/book')->with('success', 'Data Berhasil Di Hapus!');
     }
 
+    public function trash()
+   {
+    $trash=Books::join('classes', 'books.bok_class_id', '=', 'classes.cls_id')
+        ->join('categories', 'books.bok_category_id', '=', 'categories.cat_id')
+        ->join('collections', 'books.bok_collection_id', '=', 'collections.col_id')
+        ->select('books.*', 'classes.*', 'categories.*', 'collections.*')->onlyTrashed()->get();
+    $row = 1;
+    return view('admin.trash', compact('trash','row'));
+   }  
+
+   public function restore($bok_id)
+   {
+    $restore=Books::onlyTrashed()->where('bok_id',$bok_id);
+    $restore->restore();
+    return redirect('/book')->with('success', 'Data Berhasil Di Restore!');
+   }
+
     public function list_book()
     {
         $row = 1;
@@ -89,10 +106,34 @@ class BookController extends Controller
         ->join('collections', 'books.bok_collection_id', '=', 'collections.col_id')
         ->select('books.*', 'classes.*', 'categories.*', 'collections.*')
         ->orderBy('books.bok_id',  'DESC')
-            ->get();
+            ->paginate(10);
         return view('admin.list-book', ['book' => $book, 'row'=>$row]);
     }
 
-   
-   
+    public function cari( Request $request){
+
+$row = 1;
+
+$cari = $request->cari;
+
+$book = Books::join('classes', 'books.bok_class_id', '=', 'classes.cls_id')
+        ->join('categories', 'books.bok_category_id', '=', 'categories.cat_id')
+        ->join('collections', 'books.bok_collection_id', '=', 'collections.col_id')->where('bok_title_book','like',"%". $cari. "%")->paginate();
+
+
+return view('admin.list-book', ['book' => $book, 'row'=>$row]); }
+
+public function caribuku(Request $request)
+
+{
+
+$row = 1;
+
+$cari = $request->cari;
+
+$book = Books::join('classes', 'books.bok_class_id', '=', 'classes.cls_id') ->join('categories', 'books.bok_category_id', 'categories.cat_id') ->join('collections', 'books.bok_collection_id', 'collections.col_id')->where('bok_title_book','like',"%". $cari. "%")->paginate();
+return view('admin.book', ['book' => $book, 'row'=>$row]); 
+
+}
+
 }

@@ -36,9 +36,95 @@
                                 </div>
                             </div>
                           </div>
-                        </div>                   
+
+                        </div>
+
                     </div>
-                    <img src="asset/img/uh.png" class="img-responsive">
+                  </div>
+                  <div class="col-md-12" style="padding:20px;">
+                     <div class="col-md-3">
+                                    <div class="panel box-v1">
+                                      <div class="panel-heading bg-purple border-none">
+                                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                          <h4 class="text-left"><font color="white">Jumlah Pengunjung</h4></font>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                           <h4>
+                                           <font color="black"><span class="icon-user icons icon text-right"></span></font>
+                                           </h4>
+                                        </div>
+                                      </div>
+                                      <div class="panel-body bg-purple text-center">
+                                        <font color="white">
+                                        <h1>{{$visitor}}</h1>
+                                        </font>
+                                        <hr/>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="panel box-v1">
+                                      <div class="panel-heading bg-amber border-none">
+                                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0"><font color="white">
+                                          <h4 class="text-left">Jumlah Buku</h4></font>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                           <h4><font color="black">
+                                           <span class="icon-book-open icons icon text-right"></span></font>
+                                           </h4>
+                                        </div>
+                                      </div>
+                                      <div class="panel-body bg-amber text-center">
+                                        <font color="white">
+                                        <h1>{{$book}}</h1></font>
+                                        
+                                        <hr/>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="panel box-v1">
+                                      <div class="panel-heading bg-light-green border-none">
+                                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                          <h4 class="text-left"><font color="white">Jumlah Peminjam</h4>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                           <h4></font><font color="black">
+                                           <span class="icon-basket-loaded icons icon text-right"></span></font>
+                                           </h4>
+                                        </div>
+                                      </div>
+                                      <div class="panel-body bg-light-green text-center">
+                                        <font color="white">
+                                        <h1>{{$borrow}}</h1>
+                                        </font>
+                                        <hr/>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="panel box-v1">
+                                      <div class="panel-heading bg-info border-none">
+                                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                          <h4 class="text-left"><font color="white">Jumlah Rak</h4>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                           <h4></font><font color="black">
+                                           <span class="icon-chart icons icon text-right"></span></font>
+                                           </h4>
+                                        </div>
+                                      </div>
+                                      <div class="panel-body bg-info text-center">
+                                        <font color="white">
+                                        <h1>{{$collection}}</h1>
+                                        </font>
+                                        <hr/>
+                                      </div>
+                                    </div>
+                                </div>
+           </div>
+                    
+                    
 
 
 

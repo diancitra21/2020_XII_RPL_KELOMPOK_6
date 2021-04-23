@@ -16,7 +16,7 @@ class BorrowSeeder extends Seeder
             'bor_usr_id'             => 3,
             'bor_total_books' =>34,
             'bor_date'        => '2020-01-12',
-            'bor_back_date'   => '2020-01-12',
+            'bor_back_date'   => '2020-01-18',
             'bor_status'            => 1,
             'bor_fine'         => '23000',
         ]);
@@ -25,16 +25,16 @@ class BorrowSeeder extends Seeder
             'bor_usr_id'             => 2,
             'bor_total_books' => 23,
             'bor_date'        => '2020-01-12',
-            'bor_back_date'   => '2020-01-12',
+            'bor_back_date'   => '2020-01-18',
             'bor_status'            => 0,
-            'bor_fine'         => '',
+            'bor_fine'         => '30000',
         ]);
         DB::table('borrows')->insert([
             'bor_book_id'            => 4,
             'bor_usr_id'             => 5,
             'bor_total_books' =>  45,
             'bor_date'        => '2020-01-12',
-            'bor_back_date'   => '2020-01-12',
+            'bor_back_date'   => '2020-01-18',
             'bor_status'            => 1,
             'bor_fine'         => '23000',
         ]);
@@ -52,7 +52,7 @@ class BorrowSeeder extends Seeder
             'bor_usr_id'             => 2,
             'bor_total_books' =>  59,
             'bor_date'        => '2020-01-12',
-            'bor_back_date'   => '2020-01-12',
+            'bor_back_date'   => '2020-01-18',
             'bor_status'            => 1,
             'bor_fine'         => '23000',
         ]);
@@ -61,7 +61,7 @@ class BorrowSeeder extends Seeder
             'bor_usr_id'             => 5,
             'bor_total_books' => 34,
             'bor_date'        => '2020-01-12',
-            'bor_back_date'   => '2020-01-12',
+            'bor_back_date'   => '2020-01-18',
             'bor_status'            => 1,
             'bor_fine'         => '',
         ]);
@@ -71,7 +71,7 @@ class BorrowSeeder extends Seeder
             'bor_usr_id'             => 6,
             'bor_total_books' => 20,
             'bor_date'        => '2020-01-12',
-            'bor_back_date'   => '2020-01-12',
+            'bor_back_date'   => '2020-01-18',
             'bor_status'            => 1,
             'bor_fine'         => '23000',
         ]);
@@ -80,8 +80,8 @@ class BorrowSeeder extends Seeder
             'bor_usr_id'             => 2,
             'bor_total_books' => 20,
             'bor_date'        => '2020-01-12',
-            'bor_back_date'   => '2020-01-12',
-            'bor_status'            => 1,
+            'bor_back_date'   => '2020-01-18',
+            'bor_status'            => 2,
             'bor_fine'         => '23000',
         ]);
 
@@ -90,7 +90,7 @@ class BorrowSeeder extends Seeder
             'bor_usr_id'             => 4,
             'bor_total_books' => 1,
             'bor_date'        => '2020-01-12',
-            'bor_back_date'   => '2020-01-12',
+            'bor_back_date'   => '2020-01-18',
             'bor_status'            => 1,
             'bor_fine'         => '23000',
         ]);

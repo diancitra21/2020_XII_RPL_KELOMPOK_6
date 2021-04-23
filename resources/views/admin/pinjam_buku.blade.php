@@ -30,7 +30,7 @@
                       </div>
                       <div class="form-group form-animate-text" style="margin-top:40px !important;">
                         <h4>Jumlah Pinjam</h4>
-                        <input type="number" class="form-text mask-date" name="jumlahpinjam" required="" value="">
+                        <input type="number" min="1" class="form-text mask-date" name="jumlahpinjam" required="" value="">
                         <span class="bar"></span>
                       
             </div>

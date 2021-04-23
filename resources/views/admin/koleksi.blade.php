@@ -8,10 +8,38 @@
         <div class="responsive-table">
           <div id="datatables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
             <div class="row">
+  <div class="col-sm-6">
+ </div></div></div></div><form action="/koleksi/cari" method="GET" class="text-right" style="float:right">
+                <label><b>Search :</b></label>
+                   <input type="text"  name="cari" value="{{old('cari')}}">
+                   
+                 </form>
+                 
+            
+            <!-- Button trigger modal -->
+
+            <div class="row">
               <div class="col-sm-6">
-                  <div id="datatables-example_filter" class="dataTables_filter"></div></div></div>
-                  <div class="row">
-                    <div class="col-sm-12"><table id="datatables-example" class="table table-striped table-bordered dataTable no-footer" width="100%" cellspacing="0" role="grid" aria-describedby="datatables-example_info" style="width: 100%;">
+        <div id="datatables-example_wrapper" class="dataTables_wrapper form-inline
+
+dt-bootstrap no-footer">
+
+
+<a href = "{{URL::to('/Tambah_koleksi')}}" class="btn btn-3d btn-danger mr-2">
+
+Tambah Rak</a><br><br><br> <div id="datatables-example_filter" class="dataTables_filter"></div></div></div>
+
+<diy class="row">
+
+<div class="row">
+
+<div class="col-sm-6"> <div id="datatables-example_filter" class="dataTables filter"></div></div></div>
+
+<div class="row">
+
+<div class="col-sm-12"><table id="datatables-example" class="table table-striped table-bordered dataTable no-footer" width="100%" cellspacing= "0" role="grid" describedby="datatables-example info" style="width:
+
+100%;">
                       <thead>
                         <tr role="row">
                           <th class="sorting_asc" tabindex="0" aria-controls="datatables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 80px;">No</th>
@@ -57,6 +85,7 @@
                       </tr>
                     </tbody>
                   </table>
+                  {{$collection->links()}}
                 </div>
               </div>
               <div class="row">

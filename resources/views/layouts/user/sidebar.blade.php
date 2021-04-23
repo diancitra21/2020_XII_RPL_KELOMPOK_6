@@ -12,7 +12,7 @@
                     <a href="{{URL::to('home')}}"><span class="fa fa-home"></span>Dashboard
                     </a>
                         <li class="active ripple">
-                      <a class="tree-toggle nav-header"><span class="fa fa-child"></span> Buku
+                      <a class="tree-toggle nav-header"><span class="icons icon-book-open"></span> Buku
                         <span class="fa-angle-right fa right-arrow text-right"></span>
                       </a>
                       <ul class="nav nav-list tree" style="display: none;">

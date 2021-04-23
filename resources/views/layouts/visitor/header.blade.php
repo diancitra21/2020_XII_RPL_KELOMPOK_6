@@ -16,7 +16,7 @@
                    <div class="search">
                     <span class="fa fa-search icon-search" style="font-size:23px;"></span>
                     <div class="form-group form-animate-text">
-                      <input type="text" class="form-text" required>
+                      <input type="text" class="form-text">
                       <span class="bar"></span>
                       <label class="label-search">Type anywhere to <b>Search</b> </label>
                     </div>

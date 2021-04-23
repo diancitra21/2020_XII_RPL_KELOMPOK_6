@@ -16,23 +16,34 @@ use Spatie\Permission\Contracts\Role;
 
 class BorrowController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-    	$row = 1;
-    	$title = 'Daftar Peminjaman';
-        $topTable = 0;
-    	$borrow  = Borrows::join('books', 'borrows.bor_book_id', '=', 'books.bok_id')
+        if ($request->has('cari')) {
+            $borrow = \App\Borrows::join('books', 'borrows.bor_book_id', '=', 'books.bok_id')
             ->join('users', 'borrows.bor_usr_id', '=', 'users.usr_id')
             ->whereNotIn('bor_status'  , [1])
             ->select('borrows.*', 'books.*', 'users.*')
             ->orderBy('borrows.bor_id',  'DESC')
-            ->get();
-
+            ->where('usr_name', 'LIKE', '%'. $request->cari. '%')->get();
+        }else{
+        $borrow  = Borrows::join('books', 'borrows.bor_book_id', '=', 'books.bok_id')
+            ->join('users', 'borrows.bor_usr_id', '=', 'users.usr_id')
+            ->whereNotIn('bor_status'  , [1])
+            ->select('borrows.*', 'books.*', 'users.*')
+            ->orderBy('borrows.bor_id',  'DESC')
+            ->paginate(10);
+    
+        }
+    	$row = 1;
+    	$title = 'Daftar Peminjaman';
+        $topTable = 0;
+    	
     	return view ('admin.peminjaman-buku',[
-    	    'borrow' => $borrow,
+            'borrow' => $borrow, 
+            'title' => $title,
             'row' => $row,
-            'topTable'  => $topTable,
-            'title' => $title
+            'topTable'  => $topTable
+        
 
         ]);
     }
@@ -62,7 +73,7 @@ class BorrowController extends Controller
         $borrow = new Borrows;
         $borrow->bor_book_id                = $request->judul_buku;
         $borrow->bor_usr_id                 = $request->namapeminjam;
-        $borrow->bor_total_books            = $request->jumlahpinjam;
+        $borrow->bor_total_books           = $request->jumlahpinjam;
         $borrow->bor_date                   = $request->tgl_pinjam;
         $borrow->bor_back_date              = $request->tgl_kembali;
         $borrow->bor_status                 = 0;
@@ -72,8 +83,9 @@ class BorrowController extends Controller
             $book->update();
         }
         return redirect('/Peminjaman-buku')->with('success', 'Buku Berhasil Dipinjam!');
-        }
+        
     }
+}
 
     public function storeReturn(Request $request){
         $borrow_id = $request->input('borrow_id');
@@ -108,6 +120,25 @@ class BorrowController extends Controller
             $borrow->bor_status = 1;
             $borrow->save();
         }
-        return back()->withSuccessa('berhasil');
+        return back()->withSuccess('berhasil');
     }
+    public function cari( Request $request){
+
+$row = 1;
+
+$cari = $request->cari;
+
+$borrow = Borrows::join('books', 'borrows.bor_book_id', '=', 'books.bok_id')
+            ->join('users', 'borrows.bor_usr_id', '=', 'users.usr_id')
+            ->whereNotIn('bor_status'  , [1])
+            ->select('borrows.*', 'books.*', 'users.*')
+            ->orderBy('borrows.bor_id',  'DESC')
+          -> where('usr_name','like',"%". $cari. "%")->paginate(10);
+
+
+return view ('admin.peminjaman-buku',['borrow' => $borrow, 'row' => $row]);
+    
+}   
+
+    
 }
