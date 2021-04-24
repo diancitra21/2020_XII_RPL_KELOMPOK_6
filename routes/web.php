@@ -41,7 +41,7 @@ Route::get('/register-teacher', 'Auth\RegisterController@registerTeacher');
 Route::get('/register-staff', 'Auth\RegisterController@registerStaff');
 
 //Route Untuk Admin, Student, Teacher, Staff TU, jika register dan login maka akan ke halaman ini
-Route::group(['middleware' => ['role:admin', 'auth', 'DisablePreventBack']], function () {
+Route::group(['middleware' => ['DisablePreventBack', 'role:admin', 'auth']], function () {
 
     Route::get('/dashboard', 'User\UserController@index')->name('dashboard.admin');
     Route::get('book', 'BookController@index');
@@ -94,7 +94,7 @@ Route::get('/buku_tamu/cari', 'VisitorController@cari');
     Route::post('detail_admin/update/{usr_id}', 'User\UserController@update');
 
     Route::get('detail_users', 'User\UserController@DetailUserAdmin');
-    Route::get('detail_user', 'UsersController@DetailUser');
+    
     Route::get('list-user', 'User\UserController@ListUser');
  Route::get('/list-user/cari', 'User\UserController@cari');
     Route::get('detail_user/{usr_id}', 'UsersController@edit');
@@ -105,14 +105,15 @@ Route::get('/buku_tamu/cari', 'VisitorController@cari');
     
 });
 
-//Route::get('/dashboard', 'User\UserController@DashboardUser')->name('dashboard.users');
+
 //admin
 //buku
 
 Route::group(['middleware' => ['role:user', 'auth']], function () {
-    Route::get('/home', 'UsersController@index')->name('dashboard.users');
+    Route::get('/home', 'UsersController@index');
     Route::get('list-buku', 'UsersController@ListBuku');
     Route::get('/peminjaman', 'UsersController@peminjaman');
+    Route::get('detail_user', 'UsersController@DetailUser');
 
 });
 

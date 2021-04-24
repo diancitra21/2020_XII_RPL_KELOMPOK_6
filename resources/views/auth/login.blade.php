@@ -37,25 +37,29 @@ class="element-name"><h2>Perpustakaan</h2></p>
 
                   
                   <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                    <h4>E-Mail Address :<input type="text" class="form-text" id="usr_email"  class="form-control @error('usr_email') is-invalid @enderror" name="usr_email" value="{{ old('usr_email') }}" autocomplete="email" autofocus required></h4>
+                    <h4>E-Mail Address :<input type="text" required class="form-text" id="usr_email"  class="form-control @error('usr_email') is-invalid @enderror" name="usr_email" value="{{ old('usr_email') }}" autocomplete="email" autofocus required></h4>
                   </div>
                   <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                   <h4> Password : <input id="password" type="password" class="form-text @error('password') is-invalid @enderror" name="password" autocomplete="current-password" required></h4>
+                   <h4> Password : <input id="password" required type="password" class="form-text @error('password') is-invalid @enderror" name="password" autocomplete="current-password" required></h4>
                     
                     
                   </div>
-                  <label class="pull-left">
+                  <div class="float-left">
+                    <label class="pull-left">
                   <input type="checkbox" class="icheck pull-left" name="checkbox1"/> Remember me
                   </label>
-                  <input type="submit" class="btn btn-3d bg-info mr-2 col-md-12" value="SignIn"/>
+                  </div>
+                  <div class="float-right">
+                    
+                  <a href="{{url('register')}}" class="text-right" style="margin-left: 80px;"> Register</a>
+                  </div>
                   
+                  <input type="submit" class="btn btn-3d bg-info mr-2 col-md-12" value="SignIn"/>
+                  </form>          
               </div>
-                <div class="text-center" style="padding:5px;">
-                    <a href="forgotpass.html">Forgot Password </a>
-                    <a href="register-student">| Signup</a>
-                </div>
+                
           </div>
-        </form>
+        
 </div>
 </div>
       

@@ -24,20 +24,6 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
-    public function registerStudent()
-    {
-        return view('auth.register-student');
-    }
-
-    public function registerTeacher()
-    {
-        return view('auth.register-teacher');
-    }
-
-    public function registerStaff()
-    {
-        return view('auth.register-staff');
-    }
 
     use RegistersUsers;
 
@@ -46,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -70,7 +56,7 @@ class RegisterController extends Controller
             'usr_name' => ['required', 'string', 'max:255'],
             'usr_email' => ['required', 'string', 'max:255', 'unique:users,usr_email'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'usr_phone' => ['required', 'min:11', 'max:14'],
+            'usr_phone' => ['required', 'min:1', 'max:14'],
         ]);
     }
 
@@ -91,19 +77,9 @@ class RegisterController extends Controller
             'usr_is_active' => true,
         ]);
 
-        if ($data['role'] == 1) {
-            $user->assignRole('admin');
-            $user->created_by = $user->usr_id;
-        } elseif ($data['role'] == 2) {
-            $user->assignRole('user');
-            $user->created_by = $user->usr_id;
-        } /*elseif ($data['role'] == 3) {
-            $user->assignRole('staff');
-            $user->created_by = $user->usr_id;
-        }*/
+        $user->assignRole('user');
 
 
-        Mail::to($data['usr_email'])->send(new SendMail($user));
         return $user;
     }
 }
