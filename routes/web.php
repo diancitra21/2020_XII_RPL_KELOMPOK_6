@@ -16,7 +16,7 @@ use App\Users;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return redirect('/login');
 })->middleware('guest');
 
 
@@ -39,11 +39,11 @@ Route::post('/account/reset-password', 'Auth\AccountController@updatePassword')-
 Route::get('/register-student', 'Auth\RegisterController@registerStudent');
 Route::get('/register-teacher', 'Auth\RegisterController@registerTeacher');
 Route::get('/register-staff', 'Auth\RegisterController@registerStaff');
-
+Route::get('/dashboard', 'User\UserController@index')->name('dashboard.admin')->middleware(['auth', 'revalidate']);
 //Route Untuk Admin, Student, Teacher, Staff TU, jika register dan login maka akan ke halaman ini
-Route::group(['middleware' => ['DisablePreventBack', 'role:admin', 'auth']], function () {
+Route::group(['middleware' => ['auth', 'revalidate', 'role:admin' ]], function () {
 
-    Route::get('/dashboard', 'User\UserController@index')->name('dashboard.admin');
+    
     Route::get('book', 'BookController@index');
     Route::get('koleksi', 'CollectionController@index');
     Route::get('Tambah_koleksi', 'CollectionController@add_collect');
@@ -97,8 +97,8 @@ Route::get('/buku_tamu/cari', 'VisitorController@cari');
     
     Route::get('list-user', 'User\UserController@ListUser');
  Route::get('/list-user/cari', 'User\UserController@cari');
-    Route::get('detail_user/{usr_id}', 'UsersController@edit');
-    Route::post('detail_user/update/{usr_id}', 'UsersController@update');
+    
+    
     Route::post('/denda' , 'BorrowController@Denda');
     Route::get('/book/cari', 'BookController@caribuku');
     route::get('/list-book/cari', 'BookController@cari');
@@ -109,12 +109,13 @@ Route::get('/buku_tamu/cari', 'VisitorController@cari');
 //admin
 //buku
 
-Route::group(['middleware' => ['role:user', 'auth']], function () {
+Route::group(['middleware' => ['auth', 'revalidate', 'role:user', 'verified']], function () {
     Route::get('/home', 'UsersController@index');
     Route::get('list-buku', 'UsersController@ListBuku');
     Route::get('/peminjaman', 'UsersController@peminjaman');
     Route::get('detail_user', 'UsersController@DetailUser');
-
+    Route::get('detail_user/{usr_id}', 'UsersController@edit');
+    Route::post('detail_user/update/{usr_id}', 'UsersController@update');
 });
 
 

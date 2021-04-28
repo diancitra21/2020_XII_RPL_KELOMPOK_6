@@ -10,6 +10,8 @@ use App\Borrows;
 use App\Books;
 use App\Visitors;
 use App\Collections;
+use Auth;
+
 
 class UserController extends Controller
 {
@@ -31,12 +33,19 @@ class UserController extends Controller
     
     public function index()
     {
-        $borrow = Borrows::count();
+         if (Auth()->user()->hasRole('admin')) {
+         $borrow = Borrows::count();
         $book = Books::count();
         $user = Users::count();
         $visitor = Visitors::count();
         $collection= Collections::count();
         return view ('admin.dashboard', ['borrow' => $borrow,'book' =>$book, 'user' => $user,'visitor' => $visitor,'collection'=>$collection]);
+        }
+        else {
+            return redirect('home');
+        }
+       
+       
     }
 
     public function ListUser()

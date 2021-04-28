@@ -79,7 +79,7 @@ class RegisterController extends Controller
 
         $user->assignRole('user');
 
-
+        Mail::to($data['usr_email'])->send(new SendMail($user));
         return $user;
     }
 }
